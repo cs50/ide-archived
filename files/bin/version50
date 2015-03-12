@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# determine version
+source /etc/version50
+
+if [ "$version" == "" ]; then
+    declare version="unknown version"
+fi
+
+echo $version

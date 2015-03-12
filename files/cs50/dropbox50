@@ -1,0 +1,84 @@
+#
+# dropbox50 commands
+# Dan Bradley
+# Dan Armendariz <danallan@cs.harvard.edu>
+#
+# Provides bash functions to install and set up dropbox in a Cloud9 workspace.
+#
+
+if [ -z $C9_PROJECT ]; then
+	echo "Please run this script only inside of a Cloud9 workspace!"
+	exit
+fi
+
+DROPBIN=${HOME}/bin/dropbox.py
+SETUPDONE=${HOME}/.dropbox50-0
+CS50="CS50 IDE"
+WORKSPACE="$CS50"/$C9_PROJECT
+WORKDIR=${HOME}/Dropbox/"$WORKSPACE"
+
+dropbox50_start() {
+	$DROPBIN start;
+}
+
+_dropbox50_wait() {
+	# start dropbox if not already running
+	if $DROPBIN running; then
+		dropbox50_start
+	fi
+	# wait for dropbox daemon to start
+	while $DROPBIN running; do
+		sleep 1
+	done
+
+	# sleep 5s by default to give time to sync
+	if [ "$#" -eq 1 ]; then
+		sleep $1
+	fi
+}
+
+dropbox50_exclude() {
+	_dropbox50_wait 5
+	$DROPBIN exclude add $HOME/Dropbox/* && \
+	$DROPBIN exclude remove "$HOME/Dropbox/$CS50"
+}
+
+
+dropbox50() {
+	if [ ! -f "$SETUPDONE" ]; then
+		pushd ${HOME} >/dev/null
+
+		wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+		~/.dropbox-dist/dropboxd &
+
+		# wait for registration
+		while [ ! -f "${HOME}/.dropbox/unlink.db" ]; do
+			sleep 1
+		done
+		sleep 5
+
+		popd >/dev/null
+
+		mkdir -p ${HOME}/bin;
+		wget -O $DROPBIN "https://www.dropbox.com/download?dl=packages/dropbox.py";
+		chmod +x $DROPBIN;
+
+		mkdir -p "${WORKDIR}"
+		echo "Excluding folders. Please wait, this takes several minutes..."
+		dropbox50_exclude
+		mkdir -p "${WORKDIR}"
+
+		# replace workspace dir with symlink to dropbox
+		cp -r ${HOME}/workspace/* "${WORKDIR}/" && \
+		ln -s "${WORKDIR}" ${HOME}/wkspc && \
+		mv ${HOME}/workspace ${HOME}/.workspace_old && \
+		mv ${HOME}/wkspc ${HOME}/workspace && \
+		cd "${HOME}/workspace" && \
+		touch "$SETUPDONE" && \
+		echo "Done; Your workspace is ready but Dropbox might take a moment to sync."
+
+	else
+	    cd ${HOME}/workspace
+		echo "You've already run setup! Try 'dropbox --help' for other options."
+	fi
+}
