@@ -1,0 +1,123 @@
+.page{
+    padding : 20px 20px 25px 20px;
+}
+
+.page h3{
+    margin-top : 0;
+}
+
+.choice{
+    margin: 0;
+    padding: 0;
+}
+
+.choice li{
+    list-style-type: none;
+    margin: 0 0 4px 20px;
+}
+
+.intro h4{
+    margin-bottom : 0;
+}
+.intro p{
+    margin-top : 3px;
+}
+
+pre.code{
+    background: rgb(196, 196, 196);
+    padding: 10px;
+    border-radius: 3px;
+    font-family: Monaco, Menlo, 'Ubuntu Mono', Consolas, source-code-pro, monospace;
+    border: 1px solid rgb(163, 163, 163);
+    font-size: 11px;
+}
+
+.installer{
+    background : @installer-background;
+    .font-smoothing(@installer-font-smoothing);
+    /*height : 250px;*/
+    /*position : relative;*/
+    border-top: @installer-border-top;
+    box-shadow: @installer-box-shadow;
+    
+    position: absolute;
+    top: 1px;
+    left: 0;
+    right: 0;
+    bottom: 46px;
+    height: inherit;
+}
+
+.installer .title {
+    color: @installer-color;
+    font-family: @installer-font-family;
+    font-size: 20px;
+    text-shadow: @installer-text-shadow;
+}
+
+.installer .log{
+    position : absolute;
+    left : 20px;
+    top : 60px;
+    right : 20px;
+    bottom : 20px;
+    background : #153649;
+    padding : 20px 20px 40px 20px;
+    overflow : auto;
+    color : @installer-log-color;
+    line-height: 1.4em;
+    font-family : Ubuntu Mono, Menlo, Consolas, monospace;
+    font-size : 12px;
+    margin : 0;
+    border-radius: @installer-log-border-radius;
+    
+    .gradient(~"@{installer-log-gradient}");
+    
+    border : @installer-log-border;
+    border-color : @installer-log-border-color;
+    box-shadow : @installer-log-box-shadow;
+}
+
+.installer .log .output{
+    display : none;
+    color : gray;
+    margin : 10px;
+}
+
+.installer .log.details .output{
+    display : block;
+}
+
+.installer .log .error{
+    color : orange;
+}
+
+.installer .cb{
+    position: absolute;
+    top: 40px;
+    right: 21px;
+}
+
+.installer .cb label{
+    font-family: Arial;
+    font-size: 12px;
+    color: @installer-log-checkbox-color;
+}
+
+.installer .progress{
+    position: absolute;
+    left: 35px;
+    bottom: 40px;
+    font-family: arial;
+    font-size: 12px;
+    color: @installer-log-progress-color;
+    padding-left: 20px;
+}
+.installer .progress span{
+     width: 14px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: -1px;
+}

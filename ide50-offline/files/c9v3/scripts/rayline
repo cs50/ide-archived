@@ -1,0 +1,44 @@
+#!/bin/bash -e
+
+: ${1?Please specify URL:linenr}
+
+colorKeywords() {
+	local INPUT=`cat`
+	echo $INPUT | grep -E -C9999 --color=always 'function [^(]+|define\("[^"]+"' \
+		|| echo $INPUT
+}
+
+fromModuleStart() {
+	local INPUT=`cat`
+	local FROM_START=${INPUT##*define(\"}
+	if [ "$INPUT" != "$FROM_START" ]; then
+		echo "define(\"$FROM_START"
+	else
+		echo "$INPUT"
+	fi
+}
+
+MAX_BEFORE_LINES=200
+MAX_AFTER_LINES=10
+URL=${1%:*}
+LINE=${1##*:}
+
+# Add padding to input file
+seq 1 $MAX_BEFORE_LINES > /tmp/rayline.tmp
+LINE=$((LINE + MAX_BEFORE_LINES))
+
+curl -sSL $URL >> /tmp/rayline.tmp
+
+PREFIX=`head -n $((LINE-1)) /tmp/rayline.tmp | tail -n $MAX_BEFORE_LINES | fromModuleStart`
+echo "$PREFIX" | colorKeywords
+
+echo -n $'\e[1;32m'
+head -n $LINE /tmp/rayline.tmp | tail -1
+echo -n $'\e[0m'
+
+tail -n +$((LINE+1)) /tmp/rayline.tmp | head -n $MAX_AFTER_LINES | colorKeywords
+
+MODULE=`echo "$PREFIX" | head -n1 | sed -E 's/define\("([^"]*)".*/\1/'`
+if [ "$MODULE" != "$PREFIX" ]; then
+	echo -e "\n(showed $MODULE)"
+fi

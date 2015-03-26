@@ -1,0 +1,38 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <!--a:hbox class="grouped_checkbox_holder with_caption mount" align="start" height="27"
+      style="display:inline-block !important;pointer-events:all">
+        <a:checkbox label="Resources" skin="grouped_checkbox" checked="true" group="stats" />
+        <a:checkbox label="Process list" skin="grouped_checkbox" group="stats" />
+    </a:hbox-->
+
+    <div class="stats-tabs">
+        <div class="page">
+            <div class="title">
+                Workspace size: <span>small</span>
+                <div class="ping-time">Latency: calculating...</div>
+            </div>
+        
+            <div class="graph-label mem">
+                Memory: <span class='mem-used'>0</span>MB / <span class='mem-available'>1024</span>MB</div>
+            <div class="graph mem"></div>
+            <div class="graph-label">CPU: <span class='cpu-used'>0</span>%</div>
+            <div class="graph cpu"></div>
+            <div class="graph-label">Disk: <span class='disk-used'>0</span>MB / <span class='disk-available'>5120</span>MB</div>
+            <div class="graph disk"></div>
+            
+            <div class="info">
+                <span>Resize this workspace (requires restart):</span>
+                <a:dropdown skin="black_dropdown" id="ddResize" />
+                <a:button id="btnResize" skin="btn-default-css3" class="btn-green" 
+                    style="margin:10px 0 0 0px">Resize</a:button>
+                <div class="resize loading-spinner"></div>
+            </div>
+            
+            <a:hsplitbox class="buttons" padding="10">
+                <a:button id="plist" skin="btn-default-css3" width="60%">Show Process List</a:button>
+                <a:button id="restart" skin="btn-default-css3" class="restart">Restart</a:button>
+            </a:hsplitbox>
+            <div class="restart loading-spinner"></div>
+        </div>
+    </div>
+</a:application>

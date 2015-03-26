@@ -1,0 +1,63 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <a:hsplitbox anchors="10 10 10 10" class="settingspanel" visible="false" id="panel">
+        <a:vsplitbox class="searchlist niceborder" width="200" padding="10" edge="10">
+            <a:textbox id="searchbox" realtime="true" skin="searchbox" focusselect="true" height="27" />
+            <a:list id="level1"
+              autoselect      = "false"
+              reselectable    = "true"
+              class           = "searchresults noscrollbar"
+              skin            = "lineselect"
+              scrollbar       = "sbShared 45 2 2"
+              empty-message   = "No providers defined">
+                <a:each match="[provider]" />
+                <a:caption>
+                    <span class='logo' style='background-image:url([@logo]);'> </span>
+                    <span class='title'>[@name]</span>
+                </a:caption>
+            </a:list>
+        </a:vsplitbox>
+        <a:hsplitbox>
+            <a:vsplitbox width="160" class="niceborder" visible="false">
+                <a:list id="level2" 
+                  autoselect      = "false"
+                  reselectable    = "true"
+                  visible         = "false"
+                  class           = "searchresults noscrollbar"
+                  skin            = "lineselect"
+                  margin          = "10"
+                  scrollbar       = "sbShared 45 2 2"
+                  empty-message   = "No widgets defined">
+                    <a:each match="[widget]" />
+                    <a:caption value="[@name]" />
+                </a:list>
+            </a:vsplitbox>
+            <a:hsplitbox>
+                <a:bar width="200" id="form" visible="false">
+                    <!-- class="niceborder" -->
+                </a:bar>
+                <a:vsplitbox class="rightpane" splitter="true" padding="10">
+                    <a:hsplitbox id="preview" class="preview" height="50%" visible="false" edge="20 20 0 20">
+                        
+                    </a:hsplitbox>
+                    <a:bar id="help" class="help" style="overflow:auto">
+                        <div class="start">
+                            <h1>Adding a widget</h1>
+    
+                            <p>Your C9 Dashboard experience starts with widgets. These are the little boxes that display data from the services you select, such as Google Analytics, Salesforce and Basecamp. On the left is a list of all of our supported services. Pick the one you want to add to your C9 Dashboard to get started.</p>
+                            <p>You can also use your own data or that from services that we don't support, with our Custom Widgets API. These are listed under 'Custom Widgets'. This is a bit more complicated though, so we recommend you check out our developer documentation to get going.</p>
+                        </div>
+                        <div class="configure" style="display:none">
+                            <h1>Configure your widget</h1>
+
+                            <p>This is where the magic happens. You've decided which widget you want to display, now lets set up your widget.</p>
+                            <p>Where applicable, make sure you have the account selected that you wish to display data from. Now set the options available for the widget:</p>
+                            <p>If you want you can give your widget a label, this will be displayed at the top of the widget on your dashboard.</p>
+                            <p>Choose the widget size - this determines how large the widget will be displayed on your dashboard.</p>
+                            <p>There may be some other configuration options that you can select too, which will give you more control over the widget. To learn more about any of the options, just click the info icon.</p>
+                        </div>
+                    </a:bar>
+                </a:vsplitbox>
+            </a:hsplitbox>
+        </a:hsplitbox>
+    </a:hsplitbox>
+</a:application>

@@ -1,0 +1,59 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <a:hbox edge="5 0 0">
+        <a:label margin="5 10 0 0" width="80">Name</a:label>
+        <a:textbox id="tbFTPMountPoint"
+          flex       = "1"
+          focusselect="true"
+          maxheight="27"
+          skin       = "forminput" />
+    </a:hbox>
+    <a:hbox edge="5 0 0">
+        <a:label margin="5 10 0 0" width="80">Hostname</a:label>
+        <a:textbox id="tbFTPHost"
+          margin          = "0 10 0 0"
+          flex            = "1"
+          maxheight="27"
+          skin            = "forminput"
+          focusselect     = "true"
+          maxlength       = "255" />
+          <!--initial-message = "ftp.example.com" />-->
+        <a:label margin="5 10 0 0">Port</a:label>
+        <a:textbox id="tbFTPPort"
+          pattern="/^\d{1,5}$/"
+          width="75"
+          skin="forminput"
+          focusselect="true"
+          minlength="1"
+          maxlength="5"
+          maxheight="27"
+          value="21"
+          invalidmsg="Please enter a valid port" />
+    </a:hbox>
+    <a:hbox edge="5 0 0">
+        <a:label margin="5 10 0 0" width="80">Username</a:label>
+        <a:textbox id="tbFTPUser"
+          flex       = "1"
+          focusselect="true"
+          maxheight="27"
+          type       = "username"
+          skin       = "forminput" />
+    </a:hbox>
+    <a:hbox edge="5 0 0">
+        <a:label margin="5 10 0 0" width="80">Password</a:label>
+        <a:secret id="tbFTPPass"
+          type       = "password"
+          flex       = "1"
+          maxheight="27"
+          focusselect="true"
+          skin       = "forminput" />
+    </a:hbox>
+    <a:hbox edge="5 0 0">
+        <a:label margin="5 10 0 0" width="80">Remote Path</a:label>
+        <a:textbox id="tbFTPRemote"
+          flex            = "1"
+          maxheight="27"
+          focusselect     = "true"
+          skin            = "forminput"
+          value           = "/" />
+    </a:hbox>
+</a:application>

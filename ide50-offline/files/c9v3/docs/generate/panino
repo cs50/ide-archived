@@ -1,0 +1,1 @@
+panino --disableTests --additionalObjs /home/ubuntu/.nvm/v0.10.13/lib/node_modules/panino/additionalObjs.json --custom-tags fires,preventable --skin /home/ubuntu/.nvm/v0.10.13/lib/node_modules/panino/skins/goose/templates/layout.jade -y jsd output/fs.js

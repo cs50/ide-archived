@@ -1,0 +1,1 @@
+Generate documentation from inline sources. This documentation parser will parse all .js files in the plugins sub folders, recursively and extract documentation from them. It then builds normal js docblock files that can then be parsed by the YUI Documentation Parser, or any other dockblock parser.

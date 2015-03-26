@@ -1,0 +1,218 @@
+.panelsbuttonDown.deploy, .panelsbuttonDown.deploy:hover{
+    border-bottom: 1px solid rgb(27, 27, 27);
+    box-shadow: -1px -1px rgba(255,255,255,0.06) inset, -1px 0 rgba(255,255,255,0.06);
+    padding-bottom: 7px;
+}
+
+.deploycontainer .scroller{
+    position : absolute;
+    overflow-y : auto;
+    overflow-x : hidden;
+    top : 26px;
+    left : 0;
+    right : 0;
+    bottom : 0;
+}
+
+.deploy-form{
+    background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+    background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+    background-image: linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+    
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.29) inset, 0 1px 0 rgba(255,255,255, 0.06) inset;
+}
+
+.deploy-form  .label{
+    padding: 5px 0 0 0;
+}
+
+.deploynow.btn-default-css3 .caption {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-size: 10px;
+    border-radius: 3px;
+    padding: 1px 9px 3px;
+}
+.deploynow.btn-default-css3 {
+    background-image: -webkit-linear-gradient(bottom, rgba(58, 58, 58, 0.3) 0%, rgba(106, 106, 107, 0.29) 100%);
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0 rgb(0, 0, 0);
+}
+.deploynow.btn-default-css3Over{
+    background-image: -webkit-linear-gradient(bottom, rgba(100,100,100, 0.3) 0%, rgba(150,150,150, 0.29) 100%);
+}
+.deploynow.btn-default-css3Down{
+    background-image: -webkit-linear-gradient(bottom, rgba(160, 160, 160, 0.3) 0%, rgba(120, 120, 120, 0.29) 100%);
+}
+.deploynow.btn-default-css3Disabled{
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.37);
+    color: rgba(54, 54, 54, 0.5);
+}
+.deploynow.btn-default-css3 .border{
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 3px;
+}
+
+.deploy-item .content{
+    padding-bottom : 20px;
+}
+.deploy-item .state {
+    font-size: 9px;
+    position: absolute;
+    right: 22px;
+    bottom: 2px;
+}
+.deploy-item .state.auth:hover{
+    text-decoration : underline;
+    cursor : pointer;
+}
+.deploy-item .title {
+    padding : 1px 0 2px 17px;
+    font-weight: bold;
+    display : block;
+    color: rgb(247, 247, 247);
+    margin: 0 15px 2px 0;
+    outline: none;
+    white-space: nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+}
+.deploy-item .title.editable {
+    border: 0;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    cursor: text;
+}
+.deploy-item .title:hover {
+    text-decoration: underline;
+    cursor : pointer;
+}
+.deploy-item .title.editable:hover {
+    text-decoration: none;
+    cursor : text;
+}
+.deploy-item .last-deploy {
+    display : block;
+    font-size : 11px;
+    white-space: nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    margin: 2px 0;
+}
+.deploy-item .git {
+    display : block;
+    font-size : 11px;
+    margin : 0 0 6px 0;
+    white-space: nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+}
+.deploy-item .url {
+    display : block;
+    font-size : 11px;
+    margin : 3px 0 2px 0;
+    white-space: nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color : #f1f1f1;
+}
+.deploy-item .url:hover{
+    text-decoration: underline;
+}
+
+/* HEROKU */
+
+.deploy-item.heroku{
+    background-color: rgb(60, 56, 131);
+}
+.deploy-item.heroku .url{
+    color : rgb(187, 191, 255);
+}
+.deploy-item.heroku .title{
+    background: url("/static/plugins/c9.ide.deploy.heroku/@{image-path}/heroku-icon.png") no-repeat -1px 0;
+}
+.deploy-item.heroku .stack {
+    display : inline-block;
+    font-size : 11px;
+    float : right;
+}
+.deploy-item.heroku .stack:hover{
+    text-decoration: underline;
+    cursor : pointer;
+}
+
+/* MONGOLAB */
+
+.deploy-item.mongolab{
+    background-color: rgb(5, 64, 111);
+}
+.deploy-item.mongolab .title{
+    background: url("/static/plugins/c9.ide.deploy.mongolab/@{image-path}/mongolab-icon.png") no-repeat 0 0;
+}
+.deploy-item.mongolab .user, .deploy-item.mongolab .pass, .deploy-item.mongolab .host{
+    display : block;
+    font-size : 11px;
+    white-space : nowrap;
+    margin: 2px 0 0 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.deploy-item.mongolab span strong {
+    width: 60px;
+    display: inline-block;
+}
+.deploy-item.mongolab .shell{
+    float : right;
+    font-size : 11px;
+    cursor : pointer;
+    font-weight: bold;
+    color : rgb(163, 218, 255);
+}
+.deploy-item.mongolab .shell:hover{
+    text-decoration : underline;
+}
+
+/* OPENSHIFT */
+
+.deploy-item.openshift{
+    background-color: #333;
+}
+.deploy-item.openshift .title{
+    background: url("/static/plugins/c9.ide.deploy.openshift/@{image-path}/openshift-icon.png") no-repeat 0 0;
+    padding-left: 18px;
+}
+.deploy-item.openshift .url{
+    color : rgb(163, 218, 255);
+    cursor : pointer;
+}
+.deploy-item.openshift .ssh{
+    float : right;
+    font-size : 11px;
+    cursor : pointer;
+    color : red;
+    font-weight: bold;
+}
+.deploy-item.openshift .ssh:hover{
+    text-decoration : underline;
+}
+
+/* GAE */
+
+.deploy-item.gae{
+    background-color: rgb(35, 83, 8);
+}
+.deploy-item.gae .url{
+    color : rgb(187, 255, 217);
+}
+.deploy-item.gae .title{
+    background: url("/static/plugins/c9.ide.deploy.gae/@{image-path}/gae-icon.png") no-repeat -1px 0;
+}
+.deploy-item.gae .stack {
+    display : inline-block;
+    font-size : 11px;
+    float : right;
+}
+.deploy-item.gae .stack:hover{
+    text-decoration: underline;
+    cursor : pointer;
+}

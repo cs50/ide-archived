@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+git branch -f deploy-staging
+git push -f origin deploy-staging

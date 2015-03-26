@@ -1,0 +1,24 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <a:bar id="bar" 
+      skin    = "bar-status" 
+      skinset = "c9statusbar"
+      class   = ""
+      zindex  = "10000"
+      height  = "23"
+      style   = "position:absolute;bottom:3px;right:5px;">
+        <a:button id="ddType" 
+          skin    = "label"
+          style   = "cursor:pointer"
+          margin  = "1 7 4 3"
+          caption = "this.caption != ''"
+          submenudir = "up" />
+        <a:button id="btnClear"
+          margin  = "0 3 0 0"
+          skin    = "btn_console" 
+          skinset = "c9statusbar"
+          class   = "clear"
+          submenudir = "up" />
+    </a:bar>
+    <a:menu id="menu" render="runtime" class="mnuSbPrefs">
+    </a:menu>
+</a:application>

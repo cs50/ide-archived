@@ -1,0 +1,23 @@
+'use strict';
+
+var Node = require(__dirname);
+
+module.exports = Node.define({
+  type: 'COLUMN',
+  constructor: function(config) {
+    Node.call(this);
+    this.name = config.name;
+    this.alias = config.alias;
+    this.star = config.star;
+    this.asArray = config.asArray;
+    this.aggregator = config.aggregator;
+    this.table = config.table;
+    this.value = config.getValue();
+    this.dataType = config.dataType;
+    this.distinct = config.distinct;
+  },
+  as: function(alias) {
+    this.alias = alias;
+    return this;
+  }
+});

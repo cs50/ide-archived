@@ -1,0 +1,10 @@
+{
+    "--title": "Cloud9 API Reference",
+    /*"--warnings": ["-nodoc(class,public)", "-all", "+link"],*/
+    "--seo": true,
+    "--builtin-classes": true,
+    "--output": "output/docs",
+    "--": [
+        "output/parsed"
+    ]
+}

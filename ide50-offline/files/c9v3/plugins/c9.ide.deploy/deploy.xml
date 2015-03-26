@@ -1,0 +1,32 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <a:bar
+      id    = "winDeploy"
+      skin  = "panel-bar"
+      class = "deploycontainer">
+        <a:bar
+          class = "fakehbox aligncenter"
+          skin  = "toolbar-top"
+          style = "text-align:right">
+            <a:button
+                id       = "btnCreate"
+                caption  = "Add Instance"
+                skin     = "c9-menu-btn" />
+            <a:button
+                id       = "btnClose"
+                caption  = "Cancel"
+                skin     = "c9-menu-btn"
+                visible  = "false" />
+            <a:button 
+                id       = "btnPrefs"
+                skin     = "c9-menu-btn"
+                class    = "preferences"
+                tooltip  = "Preferences"
+                width    = "32" />
+        </a:bar>
+        <a:bar
+            id     = "barForm"
+            height = "0"
+            minheight = "0"
+            style  = "overflow:hidden" />
+    </a:bar>
+</a:application>

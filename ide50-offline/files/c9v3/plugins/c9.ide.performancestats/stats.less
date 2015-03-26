@@ -1,0 +1,241 @@
+.stats-btn {
+    font-family: Arial;
+    font-size: 9px;
+    padding: @stats-button-padding;
+    box-sizing: border-box;
+    width: @stats-button-width;
+    height: 100%;
+    border-right: @stats-button-border-right;
+    border-left: @stats-button-border-left;
+    box-shadow: @stats-button-box-shadow;
+    color: @stats-button-color;
+    margin-left: @stats-button-margin-left;
+}
+.stats-btn:hover {
+    background: @stats-button-hover-background;
+}
+.stats-btn.c9-simple-btnmenuDown{
+    background: @stats-button-active-background;
+    z-index: 201000;
+    position: relative;
+    box-shadow: @stats-button-active-box-shadow;
+}
+
+.stats-btn .item {
+    padding: @stats-button-item-padding;
+    position: relative;
+    text-transform: uppercase;
+    font-size: @stats-button-item-font-size;
+}
+
+.stats-btn .progress {
+    background: @stats-button-progress-highlight-color;
+    width: 50px;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: @stats-button-progress-height;
+    left: 36px;
+    width: 0px;
+    margin-top: @stats-button-progress-margin-top;
+    .transition(~"width 2s");
+}
+.stats-btn:hover .progress{
+    background: @stats-button-progress-highlight-hover-color;
+}
+.stats-btn .progress.limit {
+    background: @stats-button-progress-highlight-limit-color;
+}
+
+.stats-btn .item:after {
+    background: @stats-button-progress-background-color;
+    width: 50px;
+    float: right;
+    content: "";
+    display: inline-block;
+    height: @stats-button-progress-height;
+    margin-top: @stats-button-progress-margin-top;
+}
+.stats-btn:hover .item:after {
+    background: @stats-button-progress-background-hover-color;
+}
+
+// Menu 
+
+.stats-menu{
+    text-align: center;
+    padding: @stats-menu-padding;
+    border-radius: 4px 0 4px 4px;
+    margin:-1px 0px 0 1px !important;
+    width: @stats-menu-width !important;
+}
+
+.stats-tabs{
+    text-align: left;
+}
+
+.stats-menu .graph-label{
+    font-size: 9px;
+    text-transform: @stats-menu-graph-label-text-transform;
+}
+.stats-menu .graph-label .mem-limit{
+    float: right;
+}
+    
+.stats-menu .graph{
+    height: 40px;
+    border: @stats-menu-graph-border;
+    box-shadow: @stats-menu-graph-box-shadow;
+    margin: -1px 0 5px 0;
+    width: 300px;
+    border-radius: 3px;
+    background: @stats-menu-graph-background;
+    color: @stats-menu-graph-color;
+}
+
+.stats-menu .title{
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 13px;
+    text-transform: @stats-menu-graph-label-text-transform;
+}
+
+.stats-menu .title span{
+    font-weight: bold;
+}
+
+.stats-menu .info, .stats-bubble .info{
+    background: @stats-menu-info-background;
+    border: @stats-menu-info-border;
+    box-shadow: @stats-menu-info-box-shadow;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+.stats-bubble .info{
+    margin-top: 10px;
+}
+
+.stats-menu .info span, .stats-bubble .info span{
+    display: block;
+    margin: 0 0 5px 0;
+}
+
+.stats-bubble{
+    line-height: 1.5em;
+}
+
+.stats-bubble strong{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stats-menu .buttons{
+    position:relative;
+    height:29px;
+    margin-top: 20px;
+}
+
+.process-list{
+    height: 300px;
+    margin: 0;
+}
+.process-list .blackdg{
+    height: 100%;
+}
+
+.ping-time{
+    font-size: 8px;
+    margin-top: 2px;
+    color: #999;
+}
+
+.current-plan{
+    padding: 10px 20px 10px 10px;
+    width: 170px;
+}
+
+.current-plan .title{
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    color: @upgrade-color;
+}
+.current-plan .title span{
+    font-weight: bold;
+}
+.current-plan .details{
+    padding: 10px 10px 0 16px;
+}
+.current-plan .heading{
+    text-transform: uppercase;
+    font-size: 7px;
+}
+.current-plan .row{
+    padding: 3px 0 3px 0;
+    position: relative;
+}
+.current-plan .row:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 60px;
+    height: 2px;
+    background: @upgrade-progress-background-color;
+    width: 82px;
+    top: 18px;
+}
+.current-plan .heading span, .current-plan .row span{
+    display: inline-block;
+    width: 40px;
+}
+.current-plan .heading span:last-child, .current-plan .row span:last-child{
+    text-align: right;
+}
+.current-plan .heading span:first-child, .current-plan .row span:first-child{
+    width: 60px;
+}
+.current-plan .progress{
+    height: 2px;
+    width: 0;
+    background: @upgrade-progress-highlight-color;
+    position: absolute;
+    left: 60px;
+    z-index: 10;
+    margin-top: 1px;
+}
+.current-plan .btn-green {
+    width: 147px;
+    margin: 10px auto 0 16px;
+}
+.stats-menu .loading-spinner.resize, .stats-menu .loading-spinner.restart{
+    display: none;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    margin-left: -50px;
+}
+.stats-menu .loading-spinner.restart{
+    right: 110px;
+    left: auto;
+    bottom: 27px;
+}
+.stats-menu.resizing .loading-spinner.resize, .stats-menu.restarting .loading-spinner.restart{
+    display: block;
+}
+.stats-menu.resizing .btn-green .caption, .stats-menu.restarting .restart .caption{
+    text-indent: -2000px;
+}
+.stats-menu.resizing .btn-green .caption:after, .stats-menu.restarting .restart .caption:after{
+    content: "Resizing...";
+    text-indent: 0px !important;
+    position: absolute;
+    left: 50%;
+    margin-left: -33px;
+}
+.stats-menu.restarting .restart .caption:after {
+    content: "Restarting...";
+    margin-left: -33px;
+}

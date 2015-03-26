@@ -1,0 +1,2 @@
+git branch -f deploy-prod
+git push origin +deploy-prod

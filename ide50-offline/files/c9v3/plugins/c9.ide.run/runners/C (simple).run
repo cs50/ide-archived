@@ -1,0 +1,6 @@
+{
+    "cmd" : ["sh", "-c", "/usr/bin/gcc $file -o runme; chmod 755 $file_path/runme; $file_path/runme"],
+    "info": "Running $file_path/$file_name",
+    "env": {},
+    "selector": "^.*\\.c$"
+}

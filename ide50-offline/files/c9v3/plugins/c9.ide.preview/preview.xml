@@ -1,0 +1,63 @@
+<?xml version='1.0'?>
+<a:skin xmlns:a="http://ajax.org/2005/aml">
+<a:button name="btn-preview-choice">
+    <a:style><![CDATA[
+        .btn-preview-choice {
+            .user-select(none);
+            
+            cursor: default;
+            line-height: 19px;
+            padding-right: 17px;
+            font-size: @preview-chooser-font-size;
+            font-weight: @preview-chooser-font-weight;
+            color: ;
+            font-family: @preview-chooser-font-family;
+            -webkit-font-smoothing: auto;
+            -moz-osx-font-smoothing: auto;
+            background: @preview-chooser-background;
+            height: 20px;
+            border-radius: 0 2px 2px 0;
+            box-shadow: @preview-chooser-box-shadow;
+            cursor: pointer;
+            border: 1px solid @textbox-border-color;
+            border-left : 0;
+            border-radius: 0 3px 3px 0;
+            position : relative;
+        }
+        .btn-preview-choiceOver{
+            background: @preview-chooser-over-background;
+        }
+        .btn-preview-choiceDown{
+            background: @preview-chooser-active-background;
+        }
+        .btn-preview-choice span{
+            display : block;
+            position : absolute;
+            right : 6px;
+            top : 11px;
+            width : 5px;
+            height : 5px;
+            background: url("images/@{preview-chooser-arrow}") no-repeat;
+            opacity: 0.6;
+        }
+
+        .btn-preview-choiceIcon {
+            background-repeat: no-repeat;
+            padding-left: 25px;
+            padding-top: 3px;
+            background-position: 5px 4px;
+        }
+    ]]></a:style>
+
+    <a:presentation>
+        <a:main
+          caption    = "text()"
+          background = "."
+          icon       = ".">
+            <div class="btn-preview-choice">
+                -<span> </span>
+            </div>
+        </a:main>
+    </a:presentation>
+</a:button>
+</a:skin>

@@ -1,0 +1,12 @@
+{
+    "cmd" : ["meteor", "--port", "$PORT"],
+    "info" : "Meteor",
+    "working_dir": "$project_path",
+    "env" : {
+        "NODE_OPTIONS": "${debug?--debug-brk=5757}",
+        "ROOT_URL": "https://$C9_HOSTNAME", 
+        "BIND_IP": "$IP"
+    },
+    "debugger": "v8",
+    "debugport": 5757
+}

@@ -1,0 +1,12 @@
+.git/
+.DS_Store/
+docs/generate
+engine.io/node_modules
+lib/pivot_table/node_modules
+lib/ace/api
+lib/ace/demo
+lib/ace/doc
+lib/ace/experiments
+lib/ace/tool
+lib/source-map/node_modules
+lib/architect/demos

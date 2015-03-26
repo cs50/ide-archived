@@ -1,0 +1,37 @@
+<a:application xmlns:a="http://ajax.org/2005/aml">
+    <a:window
+      id        = "feedbackDialog"
+      title     = "Leave Beta feedback"
+      center    = "true"
+      modal     = "false"
+      buttons   = "close"
+      skin      = "bk-window"
+      kbclose   = "true"
+      class     = "relative dark"
+      width     = "358">
+        <div id="form" style="height: 190px">
+            <a:textarea margin="15 15 0 15" id="description" skin = "dashboard-textarea" width="330" height="155" initial-message="Enter any feedback here. What steps did you take? Is it reproducible in incognito mode?">
+            </a:textarea>
+        </div>
+        
+        <div id="confirmation" style="height: 190px" visible="false">
+            <a:hbox height="180" pack="center" align="center"><a:label id="confirmationMessage" width="250"></a:label></a:hbox>
+        </div>
+      
+        <a:vbox>
+            <a:hbox pack="end" padding="5" edge="6 10 10">
+                <a:button
+                  id      = "btnClose"
+                  caption = "Cancel" 
+                  skin    = "btn-default-css3" />
+                  
+                <a:button
+                  id      = "btnSend"
+                  caption = "Send Feedback" 
+                  class   = "btn-green"
+                  skin    = "btn-default-css3" />
+            </a:hbox>
+        </a:vbox>
+
+    </a:window>
+</a:application>

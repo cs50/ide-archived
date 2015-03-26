@@ -1,0 +1,4 @@
+{
+    "cmd": ["python", "$file", "$args"],
+    "selector": "^.*\\.(python|py)$"
+}

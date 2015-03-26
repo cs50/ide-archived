@@ -1,0 +1,91 @@
+<?xml version='1.0'?>
+<a:skin xmlns:a="http://ajax.org/2005/aml" xmlns="http://www.w3.org/1999/xhtml">
+    <a:bar name="bar">
+        <a:style><![CDATA[
+            .deploy-item{
+                margin: 10px;
+                padding: 7px;
+                border-radius: 3px;
+                box-shadow: 0 0 5px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.18) inset;
+                border: 1px solid rgba(0, 0, 0, 0.61);
+                position: relative;
+                
+                background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+                background-image: -moz-linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+                background-image: linear-gradient(top,rgba(0, 0, 0, 0.29) 0%, rgba(0, 0, 0, 0.11) 8px, rgba(0, 0, 0, 0.01) 13px, transparent 15px);
+                color: #ccc;
+                cursor : default;
+                
+                /*-webkit-transform-style: preserve-3d;
+                -webkit-transition: -webkit-transform 1s;
+                
+                -webkit-transform: rotateY( 180deg )*/
+            }
+            
+            .deploy-item:hover{
+            }
+            
+            .deploy-item:active{
+                /*background-color : #748512;*/
+            }
+            
+            .deploy-item.downloading .settings,
+            .deploy-item.forking .settings,
+            .deploy-item.creating .settings,
+            .deploy-item.working .settings,
+            .deploy-item.deleting .settings,
+            .deploy-item.deploying .settings{
+                background : url(images/spinner.gif) no-repeat 5px 5px;
+            }
+            
+            .deploy-item .content{
+                overflow : hidden;
+                position : relative;
+                
+                /*-webkit-backface-visibility: hidden;
+                -webkit-transform: rotateY( 0 );*/
+            }
+        ]]></a:style>
+    
+        <a:presentation>
+            <a:main container=".">
+                <div class="deploy-item">
+                </div>
+            </a:main>
+        </a:presentation>
+    </a:bar>
+    <a:button name="button">
+        <a:style><![CDATA[
+            .deploy-btn {
+                overflow           : hidden;
+                cursor             : default;
+                position           : relative;
+                height             : 14px;
+                width              : 14px;
+                -moz-user-select: -moz-none;
+                -khtml-user-select : none;
+                -webkit-user-select: none;
+                -o-user-select: none;
+                user-select        : none;
+                background         : url(images/close-button.png);
+            }
+            .deploy-btnOver { background-position: 0 -14px; }
+            .deploy-btnDown { background-position: 0 -28px; }
+            
+            .deploy-btn.settings { 
+                background : url(images/settings.png) -22px 0; 
+                width : 22px;
+                height : 23px;
+            }
+            .deploy-btnOver.settings { background-position: -22px -23px; }
+            .deploy-btnDown.settings { background-position: -22px -46px; }
+            
+            .deploy-btn.btnDisabled { opacity : 0.5; }
+        ]]></a:style>
+        <a:presentation>
+            <a:main caption="." label="." background="." icon=".">
+                <div class="deploy-btn"> </div>
+            </a:main>
+        </a:presentation>
+    </a:button>
+</a:skin>

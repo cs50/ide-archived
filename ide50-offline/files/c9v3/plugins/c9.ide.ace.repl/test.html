@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>ReplAce</title>
+    <style>
+#editor {
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+    </style>
+</head>
+<body>
+<div id="editor"></div>
+<script type="text/javascript">
+    var require = {
+        baseUrl: "",
+        paths: {
+            ace: "../../lib/ace",
+            repl_demo: "."
+        }
+    };
+</script>
+<script src="../kitchen-sink/require.js" data-main="./test"></script>
+<script src="../../build/ace.js"></script>
+
+<form action="" enctype="multipart/form-data" method="POST" style="visibility:hidden">
+    <input type="file" name="upfile">
+    <input type="submit" value="Press">
+</form>
+</body>
+</html>

@@ -1,0 +1,218 @@
+.frame.widget .body{
+    position : absolute;
+    left : 0;
+    top : 22px;
+    right : 0;
+    bottom : 0;
+}
+
+.frame.widget>.title{
+    padding-left: 6px;
+}
+/*.frame.widget>.title:hover{
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgba(31, 31, 31, 0.64)),color-stop(1, rgb(46, 46, 46)));
+}
+.frame.widget>.title:active{
+    background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgba(31, 31, 31, 0.64)),color-stop(1, rgb(46, 46, 46)));
+}*/
+.frame.widget{
+    border-bottom: 1px solid rgb(26, 26, 26);
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.dashboard .splitter{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dashboard{
+    -webkit-perspective: 3000px;
+}
+
+.dashboard>.vsplitbox>.vsplitbox, 
+.dashboard>.vsplitbox>.hsplitbox{
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 0.5s;
+}
+.dashboard.settings>.vsplitbox>.vsplitbox, 
+.dashboard.settings>.vsplitbox>.hsplitbox{
+    -webkit-transform: rotateY( -180.5deg );
+}
+.dashboard>.vsplitbox>.vsplitbox>*, 
+.dashboard>.vsplitbox>.hsplitbox>*{
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: rotateY( 0 );
+}
+.dashboard>.vsplitbox>.vsplitbox>.settingspanel, 
+.dashboard>.vsplitbox>.hsplitbox>.settingspanel{
+    -webkit-transform: rotateY( 180.5deg );
+}
+
+.settingspanel{
+    border-radius : 3px;
+    background-color : #333;
+}
+.settingspanel .rightpane{
+    background : rgb(32, 32, 32);
+}
+.settingspanel .help{
+    color : #eee;
+    padding : 15px 20px 20px 20px;
+}
+.settingspanel .help h1{
+    margin: 0;
+    color: #748512;
+}
+.settingspanel .help p {
+    line-height: 17px;
+    color: #999;
+}
+.settingspanel .rightpane{
+    border-radius : 0 3px 3px 0;
+    overflow: hidden;
+}
+.settingspanel .niceborder{
+    border-right: 1px solid rgb(26,26,26);
+    box-shadow: 1px 0 0 rgba(255,255,255,0.06);
+}
+.settingspanel .searchresults div{
+    white-space : nowrap;
+}
+.settingspanel .searchresults .title{
+    display: inline-block;
+    font-size: 14px;
+    /*vertical-align: middle;*/
+    color: #CCC;
+    white-space : nowrap;
+    text-overflow: hidden;
+    overflow: hidden;
+    margin-left : 5px;
+    position: relative;
+    top: 2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.settingspanel .searchresults .selected .title{
+    color : #f1f1f1;
+}
+.settingspanel .searchresults .logo{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+    margin: 2px 0 0 0px;
+    vertical-align: middle;
+    padding : 0;
+    background: no-repeat 50% 50%;
+}
+
+/* GAE */
+
+.gaedb{
+}
+
+.gaedb .heading{
+    background : rgb(35, 83, 8);
+    border-bottom : 3px solid rgb(32, 65, 3);
+    padding : 9px;
+    
+    position : absolute;
+    left : 0;
+    top : 0;
+    right : 0;
+    bottom : 0;
+}
+.gaedb .heading>div{
+    white-space: nowrap;
+    padding : 4px;
+}
+.gaedb .heading img{
+    left : 9px;
+    top : 9px;
+}
+.gaedb .heading span{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255,255,255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    margin: 3px 10px 0 10px;
+    border-left: 2px solid rgba(255,255,255, 0.4);
+    padding-left: 8px;
+}
+.gaedb .heading .btn-default-css3 .caption{
+    font-size: 11px;
+    padding: 3px 8px 5px;
+}
+
+/* HEROKU */
+
+.herokudb{
+    background-color: #1b1b24;
+    background-image: url(images/seigaiha.png);
+    background-position: left 0;
+    background-repeat: repeat-x;
+}
+
+.herokudb .heading{
+    background : #29264d;
+    border-bottom : 3px solid #494573;
+    padding : 9px;
+    
+    position : absolute;
+    left : 0;
+    top : 0;
+    right : 0;
+    bottom : 0;
+}
+.herokudb .heading div{
+    white-space: nowrap;
+}
+.herokudb .heading img{
+    height : 40px;
+    left : 9px;
+    top : 9px;
+}
+.herokudb .heading span{
+    font-size : 20px;
+    font-weight : bold;
+    color : #c9c3e6;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 10px 10px 10px;
+    border-left: 2px solid rgb(73, 63, 124);
+    padding-left: 8px;
+}
+.herokudb .heading .btn-default-css3 .caption{
+    font-size: 11px;
+    padding: 3px 8px 5px;
+}
+
+.herokuinfo{
+    margin : 5px 0 5px 30px;
+}
+.herokuinfo a{
+    color: #c9c3e6;
+}
+.herokuinfo td, .herokuinfo th{
+    color : #f1f1f1;
+}
+.herokuinfo th{
+    text-align : left;
+    padding-right: 10px;
+    color: rgb(171, 131, 221);
+}
+.herokuinfo th.name{
+    text-align : left;
+    color : #c9c3e6;
+    font-size : 20px;
+}
+
+.ace_lineWidgetContainer{
+    background: transparent !important;
+    border: none;
+}

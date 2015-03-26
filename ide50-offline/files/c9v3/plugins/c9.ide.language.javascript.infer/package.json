@@ -1,0 +1,14 @@
+{
+    "name": "ext.jsinfer",
+    "version": "0.0.1",
+    "main": "jsinfer-ext.js",
+    "private": true,
+    "Plugin": {
+        "provides": [
+            "ext.jsinfer"
+        ],
+        "consumes": [
+            "client-plugins"
+        ]
+    }
+}

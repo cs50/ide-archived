@@ -1,0 +1,9 @@
+{
+  "name": "c9-doc-scanner",
+  "dependencies": {
+    "panino":"~2.2.6",
+    "amd-loader": "0.0.5",
+    "escape-html": "~1.0.0",
+    "assert": "~0.4.9"
+  }
+}
