@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $1 == install ]]
+then 
+	cd /home/ubuntu/c9v3;
+	./install.sh;
+	npm install
+elif [[ $1 == run ]]
+then
+	cd /home/ubuntu/c9v3;
+	./server.js -w ../workspace
+else
+	echo "Usage: ide install|run"
+fi
