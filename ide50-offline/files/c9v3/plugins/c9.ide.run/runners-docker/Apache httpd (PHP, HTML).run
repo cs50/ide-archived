@@ -1,8 +1,0 @@
-{
-  "cmd": [
-    "run-apache2",
-    "-X"
-  ],
-  "selector": "^.*\\.(php|phtml|html|shtml)$",
-  "info": "Starting Apache httpd, serving \\033[01;34m$hostname_path\\033[00m."
-}

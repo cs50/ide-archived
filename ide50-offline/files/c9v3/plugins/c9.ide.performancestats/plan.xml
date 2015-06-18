@@ -1,9 +1,0 @@
-<a:application xmlns:a="http://ajax.org/2005/aml">
-    <strong class="title">Current plan: <span class="plan">free</span></strong>
-    <div class="details">
-        <div class="heading"><span>Resources</span> <span>used</span><span>total</span></div>
-        <div class="row mem"><span>Memory:</span> <span class="used">...</span><div class="progress"></div><span class="total">...</span></div>
-        <div class="row disk"><span>Disk:</span> <span class="used">...</span><div class="progress"></div><span class="total">...</span></div>
-    </div>
-    <a:button class="btn-green" skin="btn-default-css3" id="upgrade">Change Plan</a:button>
-</a:application>

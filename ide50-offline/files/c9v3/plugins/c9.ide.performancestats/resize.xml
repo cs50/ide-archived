@@ -1,9 +1,0 @@
-<a:application xmlns:a="http://ajax.org/2005/aml">
-    <div class="info">
-        <span>Resize this workspace (requires restart):</span>
-        <a:dropdown skin="black_dropdown" id="ddResizePop" />
-        <a:button id="btnResizePop" skin="btn-default-css3" class="btn-green" 
-            style="margin:10px 0 0 0px">Resize</a:button>
-        <div class="restart loading-spinner"></div>
-    </div>
-</a:application>

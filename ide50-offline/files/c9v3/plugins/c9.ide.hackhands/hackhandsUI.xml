@@ -1,9 +1,0 @@
-<a:application xmlns:a="http://ajax.org/2005/aml">
-    <a:bar id="winOutline" style="height:100%" skin="panel-bar">
-    	
-
-		<h1 style="text-align:center; width:100%; opacity:0.5; top:50%; position:absolute;" id="HH_LOADING">Loading...</h1><iframe id="HH_APP" frameborder="0" scrolling="no" style="border:none; height:100%; width:100%; overflow:hidden; display:none;" src="about:blank"></iframe>
-
-
-    </a:bar>
-</a:application>

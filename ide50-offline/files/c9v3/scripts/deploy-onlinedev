@@ -1,5 +1,0 @@
-#!/bin/bash -e
-
-git branch -f deploy-docker-onlinedev
-git push -f origin deploy-docker-onlinedev
-make deploy-onlinedev

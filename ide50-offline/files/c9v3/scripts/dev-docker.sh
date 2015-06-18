@@ -1,1 +1,0 @@
-sudo node server.js docker

@@ -1,6 +1,0 @@
-{
-    "cmd": ["rails", "s"],
-    "env": {},
-    "working_dir": "$project_path",
-    "selector": "source.ru"
-}

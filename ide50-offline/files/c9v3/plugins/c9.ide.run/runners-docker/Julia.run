@@ -1,5 +1,0 @@
-{
-    "cmd" : ["julia", "$file", "$args"],
-    "env" : {},
-    "selector" : "^.*\\.jl$"
-}

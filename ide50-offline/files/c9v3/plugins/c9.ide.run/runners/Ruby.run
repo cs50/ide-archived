@@ -1,5 +1,0 @@
-{
-    "cmd": ["ruby", "$file", "$args"],
-    "env": {},
-    "selector": "^.*\\.(ruby|rb)$"
-}

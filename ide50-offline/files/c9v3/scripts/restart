@@ -1,1 +1,0 @@
-kill `ps a | grep 8282 | grep node | sed -e "s/ p.*//"`

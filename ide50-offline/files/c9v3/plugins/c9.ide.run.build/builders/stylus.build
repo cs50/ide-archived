@@ -1,4 +1,0 @@
-{
-    "cmd": ["stylus", "$file"],
-    "selector": "source.styl"
-}

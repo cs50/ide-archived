@@ -1,4 +1,0 @@
-{
-    "cmd": ["go", "run", "$file", "$args"],
-    "selector": "source.go"
-}
