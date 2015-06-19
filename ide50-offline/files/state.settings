@@ -39,9 +39,7 @@
                         "tooltip": "Terminal",
                         "terminal": {
                             "id": "devel_611",
-                            "cwd": "",
-                            "width": 1175,
-                            "height": 400
+                            "cwd": ""
                         }
                     },
                     "editorType": "terminal",
