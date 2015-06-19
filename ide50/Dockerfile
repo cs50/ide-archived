@@ -1,4 +1,4 @@
-FROM cloud9/workspace
+FROM workspace
 MAINTAINER Dan Armendariz <danallan@cs.harvard.edu>
 
 RUN wget -O - http://mirror.cs50.net/ide50/2015/keyFile | sudo apt-key add -
