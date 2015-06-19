@@ -24,14 +24,14 @@ stop:
 workspace:
 	docker build -t $(IMG_WKSPC) $(IMG_WKSPC)
 
-ide:
+ide50:
 	docker build -t $(IMG_IDE) $(IMG_IDE)
 
 offline:
 	git clone git@github.com:cs50/ide50-plugin.git ide50-offline/files/ide50-plugin || true
 	docker build -t $(IMG_OFF) $(IMG_OFF)
 
-build: workspace ide offline
+build: workspace ide50 offline
 
 # removal
 clean:
