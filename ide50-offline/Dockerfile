@@ -29,6 +29,12 @@ RUN sed -i 's-.*// Other.*-&\n\
 # install C9
 RUN scripts/install-sdk.sh
 
+# set defaults
+ADD ./files/state.settings /home/ubuntu/workspace/.c9/
+ADD ./files/user.settings /home/ubuntu/.c9/
+RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
+    sudo chown -R ubuntu:ubuntu /home/ubuntu/.c9/
+
 EXPOSE 5050 8080
 ENTRYPOINT ["node", "server.js", \
             "-w", "/home/ubuntu/workspace", \
