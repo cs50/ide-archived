@@ -1,0 +1,170 @@
+{
+    "ace": {
+        "search": {
+            "@backwards": "false",
+            "@highlightmatches": "true",
+            "@matchcase": "false",
+            "@preservecase": "false",
+            "@regex": "false",
+            "@wholeword": "false",
+            "@wraparound": "true"
+        }
+    },
+    "console": {
+        "@expanded": true,
+        "@maximized": "false",
+        "json()": {
+            "meta": {
+                "accessList": [
+                    "tab1"
+                ]
+            },
+            "name": "pane1",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab1",
+                    "path": null,
+                    "className": [
+                        "tab1",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1434660891458
+                        },
+                        "filter": true,
+                        "title": "Terminal",
+                        "tooltip": "Terminal",
+                        "terminal": {
+                            "id": "devel_611",
+                            "cwd": "",
+                            "width": 1175,
+                            "height": 400
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "ext": {
+        "counters": {
+            "@ace": 2,
+            "@acestatus": 2,
+            "@divider": 4,
+            "@document": 7,
+            "@form": 5,
+            "@menu": 5,
+            "@menuitem": 13,
+            "@pane": 3,
+            "@preferences": 1,
+            "@preview": 1,
+            "@session": 6,
+            "@tab": 1,
+            "@undoManager": 7,
+            "@welcome": 1
+        }
+    },
+    "findinfiles": {
+        "@console": "true",
+        "@matchcase": "false",
+        "@regex": "false",
+        "@wholeword": "false"
+    },
+    "menus": {
+        "@minimized": false
+    },
+    "nak": {
+        "@installed": true
+    },
+    "panecycle": {
+        "json()": [
+            "tab1",
+            "preview-/README.md"
+        ]
+    },
+    "panels": {
+        "@active-left": "tree",
+        "commands.panel": {
+            "@enabled": "true",
+            "@name": "commands.panel"
+        },
+        "debugger": {
+            "@enabled": "true",
+            "@name": "debugger"
+        },
+        "navigate": {
+            "@enabled": "true",
+            "@name": "navigate"
+        },
+        "outline": {
+            "@enabled": "true",
+            "@name": "outline"
+        },
+        "tree": {
+            "@enabled": "true",
+            "@name": "tree"
+        }
+    },
+    "projecttree": {
+        "@showfs": true,
+        "expanded": {
+            "json()": [
+                "/"
+            ]
+        }
+    },
+    "recentfiles": {
+        "json()": []
+    },
+    "tabs": {
+        "json()": {
+            "focus": "preview-/README.md",
+            "meta": {
+                "accessList": [
+                    "preview-/README.md"
+                ]
+            },
+            "name": "pane2",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "preview-/README.md",
+                    "path": null,
+                    "className": [
+                        "preview--README-md",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1434664578689
+                        },
+                        "filter": true,
+                        "title": "[P] /README.md",
+                        "preview": {
+                            "path": "/README.md",
+                            "previewer": "preview.markdown"
+                        }
+                    },
+                    "editorType": "preview",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "tree_selection": {
+        "json()": [
+            "/README.md"
+        ]
+    }
+}

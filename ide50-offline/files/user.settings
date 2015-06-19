@@ -1,0 +1,16 @@
+{
+     "general": { 
+         "@animateui": true, 
+         "@automerge": "false", 
+         "@autosave": "false", 
+         "@confirmmerge": "true", 
+         "@preview-navigate": "false", 
+         "@preview-tree": "false",
+         "@revealfile": false,
+         "@skin": "flat-light",
+         "@treestyle": "default"
+     },
+    "welcome": {
+        "@first": true
+    }
+}
