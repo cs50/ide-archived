@@ -1,10 +1,10 @@
-FROM 11d0c6bc0b93
+FROM ide50
 MAINTAINER Dan Armendariz <danallan@cs.harvard.edu>
+
+RUN rm /home/ubuntu/.dropbox50
 
 RUN curl -sL https://deb.nodesource.com/setup | bash - && \ 
     apt-get install nodejs -y
-
-RUN rm /home/ubuntu/.dropbox50
 
 USER ubuntu
 
