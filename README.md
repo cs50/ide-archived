@@ -31,9 +31,9 @@ and then run `make build`.
 ## Command list
 
 There are a variety of commands in `make` to help re-build an image.
-* `make build` Builds the `workspace` image, then the `ide50` image, then
-  the `ide50-offline` image.
-* Build individual images with `make workspace`, `make ide50`, and
+* `make build` Builds the `wkspc` image, then the `ide` image, then
+  the `offline` image.
+* Build individual images with `make wkspc`, `make ide`, and
   `make offline`, respectively.
 * `make run` runs an already-built offline container
 * `make stop` then stops that running container
