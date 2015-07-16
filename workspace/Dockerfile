@@ -35,7 +35,7 @@ RUN apt-get install -y mysql-server phpmyadmin
 RUN apt-get install -y apache2 php5
 
 # tools
-RUN apt-get install -y apt-file nano strace ltrace gdb valgrind zip bash-completion tree wget
+RUN apt-get install -y apt-file nano tmux strace ltrace gdb valgrind zip bash-completion tree wget
 
 # Python
 RUN apt-get install -y python python-dev python-pip python-setuptools
