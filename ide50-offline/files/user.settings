@@ -7,7 +7,6 @@
          "@preview-navigate": "false", 
          "@preview-tree": "false",
          "@revealfile": false,
-         "@skin": "flat-light",
          "@treestyle": "default"
      },
     "welcome": {
