@@ -35,7 +35,7 @@ RUN apt-get update
 
 # servers
 RUN apt-get install -y mysql-server phpmyadmin
-RUN apt-get install -y apache2 php5
+RUN apt-get install -y apache2 php5 php5-mcrypt
 
 # tools
 RUN apt-get install -y apt-file nano tmux strace ltrace gdb valgrind zip bash-completion tree wget
