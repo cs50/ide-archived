@@ -31,7 +31,7 @@ RUN apt-get install -y console-setup sudo wget curl git python software-properti
 RUN apt-get update
 
 # editors
--RUN apt-get install -y vim emacs
+RUN apt-get install -y vim emacs
 
 # servers
 RUN apt-get install -y mysql-server phpmyadmin
