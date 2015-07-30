@@ -6,3 +6,5 @@ RUN add-apt-repository "deb http://mirror.cs50.net/ide50/2015/dists/trusty/main/
 
 RUN apt-get update
 RUN apt-get install ide50 -y
+
+RUN echo "Success" >/var/www/html/file
