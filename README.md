@@ -7,6 +7,28 @@ an <tt>ide50</tt> image on top of that, and then finally creating the
 <tt>ide50-offline</tt> image on top. There are some `make` commands to
 simplify this process.
 
+# Making changes to offline:
+
+The primary way to make changes to the offline workspace is to add things
+(required packages, scripting various installation steps, etc) to the [ide50
+Debian package](https://github.com/cs50/ide50) which is also used for the
+online version of the IDE. The build process below builds an offline IDE
+based on the publicly-accessible IDE50 package on mirror.cs50.net.
+
+# Testing offline changes:
+
+First build an offline workspace from scratch using the "To build all from
+scratch" steps below.
+
+Next, make changes to the [ide50 Debian package](https://github.com/cs50/ide50),
+build it, and follow the directions on that repo to locally install the deb
+on the offline workspace (also be sure to test it on an online workspace!)
+you generated above.
+
+If all goes well, publish the deb to the mirror and build the offline
+workspace from scratch, once there has been sufficient time for all mirrors
+to receive the new deb.
+
 # To build all from scratch:
 
 1. Install [boot2docker](http://boot2docker.io).
