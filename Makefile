@@ -28,14 +28,18 @@ ide:
 	docker build -t $(IMG_IDE) $(IMG_IDE)
 
 offline:
-	git clone git@github.com:cs50/ide50-plugin.git ide50-offline/files/ide50-plugin || true
+	rm -rf ide50-offline/files/ide50-plugin
+	mkdir -p ide50-offline/files/ide50-plugin
+	git clone --depth=1 git@github.com:cs50/ide50-plugin.git ide50-offline/files/ide50-plugin
+	rm -rf ide50-offline/files/ide50-plugin/README.md
+	rm -rf ide50-offline/files/ide50-plugin/.git
 	docker build -t $(IMG_OFF) $(IMG_OFF)
 
 build: wkspc ide offline
 
 # removal
 clean:
-	rm -r ide50-offline/files/ide50-plugin || true
+	rm -rf ide50-offline/files/ide50-plugin || true
 	docker rm $(CON_OFF)
 	docker rmi $(IMG_OFF)
 
