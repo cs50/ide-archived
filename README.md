@@ -64,6 +64,6 @@ There are a variety of commands in `make` to help re-build an image.
 * `make clean` removes the offline image and container *only*
 
 # To install for cloud9:
-1. Change line 1 of ide50/Dockerfile to 'FROM cloud9/workspace'
+1. Change line 1 of ide50/Dockerfile to <tt>FROM cloud9/workspace</tt>
 2. Zip ide50 (<tt>zip -r ide50 ide50</tt>).
 3. Email to Nikolai Onken, nikolai@c9.io
