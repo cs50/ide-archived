@@ -17,7 +17,8 @@ USER ubuntu
 
 # download C9 core
 WORKDIR /var
-RUN sudo mkdir c9sdk && \
+RUN sudo rm -rf c9sdk && \
+    sudo mkdir c9sdk && \
     sudo chown ubuntu:ubuntu c9sdk && \
     git clone https://github.com/c9/core.git c9sdk
 
