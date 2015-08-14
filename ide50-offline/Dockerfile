@@ -24,32 +24,24 @@ RUN sudo rm -rf c9sdk && \
 
 # install cs50 plugins
 WORKDIR c9sdk
-ADD ./files/ide50-plugin/ plugins/c9.ide.plugins/
-RUN sudo chown -R ubuntu:ubuntu plugins/c9.ide.plugins/cs50*
+ADD ./files/ide50-plugin/ plugins/
+RUN sudo chown -R ubuntu:ubuntu plugins/c9.ide.cs50.*
 
-# notify c9sdk to run CS50 plugins (inject each plugin in "Other" category)
-RUN sed -i 's-.*// Other.*-&\n\
-        "plugins/c9.ide.plugins/cs50stats/stats50",\n\
-        "plugins/c9.ide.plugins/cs50simple/simple50",\n-' \
-    configs/client-default.js
-
+# install cs50 workspace config
+ADD ./files/client-workspace-cs50.js configs/
 
 # install C9
 RUN scripts/install-sdk.sh
 
-# force terminal tabs to say "Terminal"
-RUN sed -i 's/";", "set-option", "set-titles", "on",/";", "set-option", "set-titles", "off",/' \
-    /var/c9sdk/node_modules/vfs-local/localfs.js
-
 # set defaults
 ADD ./files/state.settings /home/ubuntu/workspace/.c9/
-ADD ./files/user.settings /home/ubuntu/.c9/
 RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
     sudo chown -R ubuntu:ubuntu /home/ubuntu/.c9/
 
 EXPOSE 5050 8080
 ENTRYPOINT ["node", "server.js", \
             "-w", "/home/ubuntu/workspace", \
+            "--workspacetype=cs50", \
             "--auth", ":", \
             "--listen", "0.0.0.0", \
             "--port", "5050"]

@@ -39,7 +39,7 @@ offline:
 	mkdir -p ide50-offline/files/ide50-plugin
 	git clone --depth=1 git@github.com:cs50/ide50-plugin.git ide50-offline/files/ide50-plugin
 	rm -rf ide50-offline/files/ide50-plugin/README.md
-	rm -rf ide50-offline/files/ide50-plugin/.git
+	rm -rf ide50-offline/files/ide50-plugin/.git*
 	docker build -t $(IMG_OFF) ide50-offline
 
 build: wkspc ide offline
