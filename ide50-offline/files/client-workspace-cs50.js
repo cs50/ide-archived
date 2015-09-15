@@ -3,6 +3,7 @@
 module.exports = function(options) {
     // Remove C runner
     delete options.runners["C (simple)"];
+    options.projectName = "ide50-offline";
 
     var config = require("./client-default")(options);
 
@@ -23,6 +24,9 @@ module.exports = function(options) {
     }).filter(function (p) {
         if (p.packagePath == "plugins/c9.ide.layout.classic/preload") {
             p.defaultTheme = "flat-light"; // set flat theme as default
+        }
+        else if (p.packagePath == "plugins/c9.fs/fs.cache.xml") {
+            p.rootLabel = "~/workspace";
         }
         else if (p.packagePath == "plugins/c9.core/settings") {
             if (p.settings)
