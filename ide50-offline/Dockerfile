@@ -34,7 +34,6 @@ ADD ./files/client-workspace-cs50.js configs/
 RUN scripts/install-sdk.sh
 
 # set defaults
-ADD ./files/state.settings /home/ubuntu/workspace/.c9/
 RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
     sudo chown -R ubuntu:ubuntu /home/ubuntu/.c9/
 
