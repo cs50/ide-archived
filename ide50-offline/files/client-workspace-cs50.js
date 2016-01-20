@@ -9,7 +9,9 @@ module.exports = function(options) {
 
     var includes = [
         "plugins/c9.ide.cs50.simple/simple50",
-        "plugins/c9.ide.cs50.stats/stats50"
+        "plugins/c9.ide.cs50.info/info50",
+        "plugins/c9.ide.cs50.themes/themes50",
+        "plugins/c9.ide.cs50.previewer/previewer50"
     ];
 
     var excludes = {
