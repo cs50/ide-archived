@@ -5,13 +5,12 @@ RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get install nodejs -y
 
 # populate some env variables
-RUN echo "\n\
-export USER=ubuntu\n\
+RUN echo "export USER=ubuntu\n\
 export C9_PROJECT=ide50-offline\n\
 export C9_USER=jharvard\n\
 export C9_HOSTNAME=\$OFFLINE_IP\n\
 export C9_PORT=\$OFFLINE_PORT\n\
-export IDE_OFFLINE=1" >>/etc/profile.d/ide50.sh
+export IDE_OFFLINE=1" >/etc/profile.d/offline.sh
 
 USER ubuntu
 
