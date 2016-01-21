@@ -37,10 +37,6 @@ module.exports = function(options) {
         else if (p.packagePath == "plugins/c9.fs/fs.cache.xml") {
             p.rootLabel = "~/workspace";
         }
-        else if (p.packagePath == "plugins/c9.core/settings") {
-            if (p.settings)
-                p.settings.user = {}; // reset user settings
-        }
         return !excludes[p.packagePath];
     });
     
