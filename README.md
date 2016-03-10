@@ -31,12 +31,12 @@ to receive the new deb.
 
 # To build all from scratch:
 
-1. Install [boot2docker](http://boot2docker.io).
-1. Run boot2docker (or in a Terminal, type <tt>boot2docker start</tt>)
-1. Once it's loaded, cd to the root of this repo
-1. Run `make build` and wait. This builds all images sequentially.
-1. Run the built offline container with `make run`.
-1. (Mac OS X only) run `make open` to automatically open a tab in your favorite
+1. Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox).
+1. Launch *Docker QuickStart Terminal*.
+1. Execute `cd /path/to/ide50-docker`.
+1. Execute `make build` and wait. This builds all images sequentially.
+1. Start the built offline container with `make run`.
+1. (Mac OS X only) Execute `make open` to automatically open a tab in your favorite
    browser that loads the offline IDE.
 
 # Rebuild after making changes
