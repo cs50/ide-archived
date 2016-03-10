@@ -3,7 +3,7 @@ IMG_IDE=ide50
 IMG_OFF=ide50-offline-big
 IMG_SQU=ide50-offline
 CON_OFF=cs50ide
-IP := $(shell boot2docker ip)
+IP := $(shell docker-machine ip)
 
 # running
 run:
