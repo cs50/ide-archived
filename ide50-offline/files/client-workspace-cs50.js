@@ -16,8 +16,8 @@ module.exports = function(options) {
         "plugins/c9.ide.cs50.info/info50",
         "plugins/c9.ide.cs50.previewer/previewer50",
         {
-            packagePath: "plugins/c9.ide.cs50.themes/themes50",
-            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.themes"
+            packagePath: "plugins/c9.ide.cs50.theme/plugin",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.theme"
         }
     ];
 
