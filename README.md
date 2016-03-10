@@ -32,7 +32,7 @@ to receive the new deb.
 # To build all from scratch:
 
 1. Install [Docker Toolbox](https://www.docker.com/products/docker-toolbox).
-1. Launch *Docker QuickStart Terminal*.
+1. Launch **Docker QuickStart Terminal**.
 1. Execute `cd /path/to/ide50-docker`.
 1. Execute `make build` and wait. This builds all images sequentially.
 1. Start the built offline container with `make run`.
