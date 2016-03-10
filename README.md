@@ -67,3 +67,12 @@ There are a variety of commands in `make` to help re-build an image.
 1. Change line 1 of ide50/Dockerfile to <tt>FROM cloud9/workspace</tt>
 2. Zip ide50 (<tt>zip -r ide50 ide50</tt>).
 3. Email to Nikolai Onken, nikolai@c9.io
+
+# Troubleshooting
+
+If something seems awry with Docker, odds are the below will help. **The below will delete and recreate the virtual machine used by Docker.**
+
+    docker-machine stop default
+    docker-machine rm default
+    docker-machine create --driver virtualbox default
+    eval $(docker-machine env default)
