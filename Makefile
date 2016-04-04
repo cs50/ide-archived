@@ -50,6 +50,7 @@ squash:
 
 # removal
 clean:
+	docker stop cs50ide
 	rm -rf ide50-offline/files/ide50-plugin || true
 	docker rm $(CON_OFF) || true
 	docker rmi $(IMG_SQU) || true

@@ -12,9 +12,13 @@ module.exports = function(options) {
     var config = require("./client-default")(options);
 
     var includes = [
-        "plugins/c9.ide.cs50.simple/simple50",
+        {
+            packagePath: "plugins/c9.ide.cs50.cat/plugin",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.cat"
+        },
         "plugins/c9.ide.cs50.info/info50",
         "plugins/c9.ide.cs50.previewer/previewer50",
+        "plugins/c9.ide.cs50.simple/simple50",
         {
             packagePath: "plugins/c9.ide.cs50.theme/plugin",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.theme"
