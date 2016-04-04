@@ -41,6 +41,16 @@ module.exports = function(options) {
         else if (p.packagePath == "plugins/c9.fs/fs.cache.xml") {
             p.rootLabel = "~/workspace";
         }
+        else if (p.packagePath == "plugins/c9.ide.console/console") {
+            p.defaultState = {
+                type: "pane",
+                nodes: [{
+                    type: "tab",
+                    editorType: "terminal",
+                    active: "true"
+                }]
+            };
+        }
         return !excludes[p.packagePath];
     });
     
