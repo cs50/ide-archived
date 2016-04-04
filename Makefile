@@ -24,8 +24,11 @@ open:
 shell: run
 	docker exec -it $(CON_OFF) /bin/bash
 
+restart:
+	docker restart $(CON_OFF) || true
+
 stop:
-	docker stop $(CON_OFF)
+	docker stop $(CON_OFF) || true
 
 # building
 wkspc:
@@ -49,10 +52,9 @@ squash:
 	docker save $(IMG_OFF) | sudo docker-squash -t $(IMG_SQU) | docker load
 
 # removal
-clean:
-	docker stop cs50ide
+clean: stop
 	rm -rf ide50-offline/files/ide50-plugin || true
 	docker rm $(CON_OFF) || true
 	docker rmi $(IMG_SQU) || true
-	docker rmi $(IMG_OFF)
+	docker rmi $(IMG_OFF) || true
 
