@@ -70,7 +70,11 @@ There are a variety of commands in `make` to help re-build an image.
 
 # Troubleshooting
 
-If something seems awry with Docker, odds are the below will help. **The below will delete and recreate the virtual machine used by Docker.**
+## Error checking TLS connection: Error checking and/or regenerating the certs
+
+    docker-machine regenerate-certs default
+
+If something still seems awry with Docker, odds are the below will help. **The below will delete and recreate the virtual machine used by Docker.**
 
     docker-machine stop default
     docker-machine rm default
