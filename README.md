@@ -68,6 +68,18 @@ There are a variety of commands in `make` to help re-build an image.
 2. Zip ide50 (<tt>zip -r ide50 ide50</tt>).
 3. Email to Nikolai Onken, nikolai@c9.io
 
+# HOWTOs
+
+## Re-build SDK
+
+After making changes to CSS (e.g., in `/var/c9sdk/plugins/*`) or config files (e.g., `/var/c9sdk/configs/client-workspace-cs50.js`):
+
+    cd /path/to/ide50-docker
+    make shell
+    /var/c9sdk/scripts/install-sdk.sh
+    exit
+    make restart
+
 # Troubleshooting
 
 ## Error checking TLS connection: Error checking and/or regenerating the certs
