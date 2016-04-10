@@ -13,14 +13,14 @@ module.exports = function(options) {
 
     var includes = [
         {
-            packagePath: "plugins/c9.ide.cs50.cat/plugin",
+            packagePath: "plugins/c9.ide.cs50.cat/cat",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.cat"
         },
         "plugins/c9.ide.cs50.info/info50",
         "plugins/c9.ide.cs50.previewer/previewer50",
         "plugins/c9.ide.cs50.simple/simple50",
         {
-            packagePath: "plugins/c9.ide.cs50.theme/plugin",
+            packagePath: "plugins/c9.ide.cs50.theme/theme",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.theme"
         }
     ];
