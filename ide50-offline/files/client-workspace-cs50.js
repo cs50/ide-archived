@@ -51,6 +51,9 @@ module.exports = function(options) {
                 }]
             };
         }
+        else if (p.packagePath == "plugins/c9.ide.tree/favorites") {
+            p.realRoot = false;
+        }
         return !excludes[p.packagePath];
     });
     
