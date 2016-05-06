@@ -45,11 +45,11 @@ ide:
 	docker build -t $(IMG_IDE) $(IMG_IDE)
 
 offline:
-	rm -rf ide50-offline/files/ide50-plugin
-	mkdir -p ide50-offline/files/ide50-plugin
-	git clone --depth=1 git@github.com:cs50/ide50-plugin.git ide50-offline/files/ide50-plugin
-	rm -rf ide50-offline/files/ide50-plugin/README.md
-	rm -rf ide50-offline/files/ide50-plugin/.git*
+	rm -rf ide50-offline/files/ide50-plugins
+	mkdir -p ide50-offline/files/ide50-plugins
+	git clone --depth=1 git@github.com:cs50/ide50-plugins.git ide50-offline/files/ide50-plugins
+	rm -rf ide50-offline/files/ide50-plugins/README.md
+	rm -rf ide50-offline/files/ide50-plugins/.git*
 	docker build -t $(IMG_OFF) ide50-offline
 
 build: wkspc ide offline
@@ -60,7 +60,7 @@ squash:
 
 # removal
 clean: stop
-	rm -rf ide50-offline/files/ide50-plugin || true
+	rm -rf ide50-offline/files/ide50-plugins || true
 	docker rm $(CON_OFF) || true
 	docker rmi $(IMG_SQU) || true
 	docker rmi $(IMG_OFF) || true
