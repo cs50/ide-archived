@@ -5,6 +5,13 @@ IMG_SQU=ide50-offline
 CON_OFF=cs50ide
 IP := $(shell docker-machine ip)
 
+# pick right tool for opening IDE in browser
+ifeq ($(shell uname), Linux)
+    OPEN=xdg-open
+else
+    OPEN=open
+endif
+
 # running
 run:
 	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
@@ -19,7 +26,7 @@ run-squash:
 	|| docker start $(CON_OFF)
 
 open:
-	open http://$(IP):5050/ide.html
+	$(OPEN) http://$(IP):5050/ide.html
 
 shell: run
 	docker exec -it $(CON_OFF) /bin/bash
