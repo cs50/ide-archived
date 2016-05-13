@@ -24,7 +24,7 @@ RUN sudo rm -rf c9sdk && \
 
 # install cs50 plugins
 WORKDIR c9sdk
-ADD ./files/ide50-plugin/ plugins/
+ADD ./files/ide50-plugins/ plugins/
 RUN sudo chown -R ubuntu:ubuntu plugins/c9.ide.cs50.*
 
 # install cs50 workspace config
