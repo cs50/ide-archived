@@ -10,7 +10,8 @@ export C9_PROJECT=ide50-offline\n\
 export C9_USER=jharvard\n\
 export C9_HOSTNAME=\$OFFLINE_IP\n\
 export C9_PORT=\$OFFLINE_PORT\n\
-export IDE_OFFLINE=1" >/etc/profile.d/offline.sh
+export IDE_OFFLINE=1\n\
+alias c9=/var/c9sdk/bin/c9" >/etc/profile.d/offline.sh
 
 USER ubuntu
 
