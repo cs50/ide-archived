@@ -12,7 +12,7 @@ else
     OPEN=open
 endif
 
-# running
+# running (you can override with, eg, `make run image="cs50/ide50-offline"`
 image="ide50-offline-big"
 run:
 	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
