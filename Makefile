@@ -13,16 +13,11 @@ else
 endif
 
 # running
+image="ide50-offline-big"
 run:
 	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
 		   --name $(CON_OFF) -d \
-		   -p 5050:5050 -p 8080:8080 $(IMG_OFF) 2>/dev/null \
-	|| docker start $(CON_OFF)
-
-run-squash:
-	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
-		   --name $(CON_OFF) -d \
-		   -p 5050:5050 -p 8080:8080 $(IMG_SQU) 2>/dev/null \
+		   -p 5050:5050 -p 8080:8080 $(image) 2>/dev/null \
 	|| docker start $(CON_OFF)
 
 open:
