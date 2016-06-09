@@ -22,12 +22,17 @@ RUN sudo rm -rf c9sdk && \
     sudo chown ubuntu:ubuntu c9sdk && \
     git clone https://github.com/c9/core.git c9sdk
 
-# install cs50 plugins
+# install CS50's plugins
 WORKDIR c9sdk
-ADD ./files/ide50-plugins/ plugins/
-RUN sudo chown -R ubuntu:ubuntu plugins/c9.ide.cs50.*
+ADD ./files/harvard.cs50.cat plugins/c9.ide.cs50.cat
+ADD ./files/harvard.cs50.info plugins/c9.ide.cs50.info
+ADD ./files/harvard.cs50.presentation plugins/c9.ide.cs50.presentation
+ADD ./files/harvard.cs50.previewer plugins/c9.ide.cs50.previewer
+ADD ./files/harvard.cs50.simple plugins/c9.ide.cs50.simple
+ADD ./files/harvard.cs50.theme plugins/c9.ide.cs50.theme
+RUN sudo chown -R ubuntu:ubuntu plugins
 
-# install cs50 workspace config
+# install CS50's configuration
 ADD ./files/client-workspace-cs50.js configs/
 
 # install C9

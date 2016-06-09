@@ -40,11 +40,14 @@ ide:
 	docker build -t $(IMG_IDE) $(IMG_IDE)
 
 offline:
-	rm -rf ide50-offline/files/ide50-plugins
-	mkdir -p ide50-offline/files/ide50-plugins
-	git clone --depth=1 git@github.com:cs50/ide50-plugins.git ide50-offline/files/ide50-plugins
-	rm -rf ide50-offline/files/ide50-plugins/README.md
-	rm -rf ide50-offline/files/ide50-plugins/.git*
+	rm -rf ide50-offline/files/harvard.cs50.*
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.cat.git ide50-offline/files/harvard.cs50.cat
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.info.git ide50-offline/files/harvard.cs50.info
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.presentation.git ide50-offline/files/harvard.cs50.presentation
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.previewer.git ide50-offline/files/harvard.cs50.previewer
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.simple.git ide50-offline/files/harvard.cs50.simple
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.theme.git ide50-offline/files/harvard.cs50.theme
+	rm -rf ide50-offline/files/harvard.cs50.*/.{git,gitignore}
 	docker build -t $(IMG_OFF) ide50-offline
 
 build: wkspc ide offline
@@ -55,7 +58,7 @@ squash:
 
 # removal
 clean: stop
-	rm -rf ide50-offline/files/ide50-plugins || true
+	rm -rf ide50-offline/files/harvard.cs50.* || true
 	docker rm $(CON_OFF) || true
 	docker rmi $(IMG_SQU) || true
 	docker rmi $(IMG_OFF) || true
