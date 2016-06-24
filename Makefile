@@ -54,7 +54,11 @@ build: wkspc ide offline
 
 # squash
 squash:
-	docker save $(IMG_OFF) | sudo docker-squash -t $(IMG_SQU) | docker load
+	# be sure to build docker-squash with support for the new manifest:
+	# https://github.com/jwilder/docker-squash/pull/55
+	# This may help, if the PR isn't yet merged:
+	# https://stackoverflow.com/questions/27567846/how-can-i-checkout-a-github-pull-request
+	docker save $(IMG_OFF) | sudo docker-squash -t $(IMG_SQU):latest | docker load
 
 # removal
 clean: stop
