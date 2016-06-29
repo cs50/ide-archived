@@ -16,12 +16,12 @@ endif
 image="ide50-offline-big"
 run:
 	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
-		   --name $(CON_OFF) -d \
+		   --name $(CON_OFF) -d -t \
 		   -p 5050:5050 -p 8080:8080 $(image) 2>/dev/null \
 	|| docker start $(CON_OFF)
 
 open:
-	$(OPEN) http://$(IP):5050/ide.html
+	$(OPEN) http://$(IP):5050/ide.html >/dev/null 2>&1
 
 shell: run
 	docker exec -it $(CON_OFF) /bin/bash
