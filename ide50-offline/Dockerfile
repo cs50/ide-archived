@@ -30,6 +30,7 @@ ADD ./files/harvard.cs50.presentation plugins/c9.ide.cs50.presentation
 ADD ./files/harvard.cs50.previewer plugins/c9.ide.cs50.previewer
 ADD ./files/harvard.cs50.simple plugins/c9.ide.cs50.simple
 ADD ./files/harvard.cs50.theme plugins/c9.ide.cs50.theme
+ADD ./files/harvard.cs50.gist plugins/c9.ide.cs50.gist
 RUN sudo chown -R ubuntu:ubuntu plugins
 
 # install CS50's configuration

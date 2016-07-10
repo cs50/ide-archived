@@ -16,6 +16,10 @@ module.exports = function(options) {
             packagePath: "plugins/c9.ide.cs50.cat/cat",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.cat"
         },
+        {
+            packagePath: "plugins/c9.ide.cs50.gist/gist",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.gist"
+        },
         "plugins/c9.ide.cs50.info/info",
         {
             packagePath: "plugins/c9.ide.cs50.presentation/presentation",
