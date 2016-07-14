@@ -42,13 +42,14 @@ ide:
 
 offline:
 	rm -rf ide50-offline/files/harvard.cs50.*
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.audioplayer.git ide50-offline/files/harvard.cs50.audioplayer
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.cat.git ide50-offline/files/harvard.cs50.cat
+	git clone --depth=1 git@github.com:cs50/harvard.cs50.gist.git ide50-offline/files/harvard.cs50.gist
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.info.git ide50-offline/files/harvard.cs50.info
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.presentation.git ide50-offline/files/harvard.cs50.presentation
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.previewer.git ide50-offline/files/harvard.cs50.previewer
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.simple.git ide50-offline/files/harvard.cs50.simple
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.theme.git ide50-offline/files/harvard.cs50.theme
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.gist.git ide50-offline/files/harvard.cs50.gist
 	rm -rf ide50-offline/files/harvard.cs50.*/.{git,gitignore}
 	docker build -t $(IMG_OFF) ide50-offline
 
