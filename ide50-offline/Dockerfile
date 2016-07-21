@@ -13,6 +13,10 @@ export C9_PORT=\$OFFLINE_PORT\n\
 export IDE_OFFLINE=1\n\
 alias c9=/var/c9sdk/bin/c9" >/etc/profile.d/offline.sh
 
+# since C9_USER didn't exist until now, mysql.sh doesn't have username
+RUN sed -i 's/MYSQL_USERNAME.*/MYSQL_USERNAME="jharvard"/' \
+    /etc/profile.d/mysql.sh
+
 USER ubuntu
 
 # download C9 core
