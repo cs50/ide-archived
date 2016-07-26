@@ -41,7 +41,6 @@ module.exports = function(options) {
     ];
 
     var excludes = {
-        "plugins/c9.ide.login/login": true,
         "plugins/c9.ide.welcome/welcome": true
     };
 
