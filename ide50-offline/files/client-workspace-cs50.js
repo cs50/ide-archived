@@ -33,7 +33,10 @@ module.exports = function(options) {
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.presentation"
         },
         "plugins/c9.ide.cs50.previewer/previewer50",
-        "plugins/c9.ide.cs50.simple/simple",
+        {
+            packagePath: "plugins/c9.ide.cs50.simple/simple",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.simple"
+        },
         {
             packagePath: "plugins/c9.ide.cs50.theme/theme",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.theme"
