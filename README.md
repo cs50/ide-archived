@@ -50,6 +50,48 @@ Rebuilding from an earlier version (say, if you need to build a new
 rebuilding from that container. It's probably easiest to delete all images
 and then run `make build`.
 
+# Deploying a new offline image
+
+We generally deploy a new offline version when a new version of the
+[ide50 deb](https://github.com/cs50/ide50) is released.
+This way, people that download the offline version are sure to have the
+very latest.
+
+## Preparation
+
+1. Clean all existing images and containers. Building from scratch is
+   generally preferred since it ensures the latest version of Ubuntu
+   and other packages. Use `docker ps -a` to see a full list of docker
+   containers, stopping any relevant ones if necessary, and remove them
+   with `docker rm`. Use `docker images` to see a list of images,
+   and use `docker rmi` to delete those images. I usually delete all images
+   that are associated with the offline IDE to be sure to build from scratch.
+2. Run `make build` to build from scratch.
+3. Run the offline with `make run` to ensure the latest deb was installed
+   and all changes are as they appear.
+
+## Deployment
+
+If all looks good after a successful complete build, begin the actual
+deployment steps:
+
+1. Run `make squash` to [squash](https://github.com/jwilder/docker-squash) the
+   docker image into as small of a size as possible. Note: docker squash
+   tools tend to change rapidly, so you may need to update the `squash` rule
+   in the Makefile periodically, or update the copy of the docker-squash.
+2. Once that's done, apply both "beta" and "latest" tags to the build
+   version. "Beta" builds are at least as new as the "latest", but sometimes
+   its useful to release just a "beta" build with features that others test:
+```shell
+docker tag ide50-offline cs50/ide50-offline:beta
+docker tag ide50-offline cs50/ide50-offline:latest
+```
+3. Push the tags to Docker hub:
+```shell
+docker push cs50/ide50-offline:beta
+docker push cs50/ide50-offline:latest
+```
+
 ## Command list
 
 There are a variety of commands in `make` to help re-build an image.
