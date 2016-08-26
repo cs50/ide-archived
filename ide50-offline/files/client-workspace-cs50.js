@@ -25,10 +25,6 @@ module.exports = function(options) {
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.debug"
         },
         {
-            packagePath: "plugins/c9.ide.cs50.droplet/droplet",
-            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.droplet"
-        },
-        {
             packagePath: "plugins/c9.ide.cs50.gist/gist",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.gist"
         },

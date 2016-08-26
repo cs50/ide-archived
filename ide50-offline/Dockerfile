@@ -31,7 +31,6 @@ WORKDIR c9sdk
 ADD ./files/harvard.cs50.audioplayer plugins/c9.ide.cs50.audioplayer
 ADD ./files/harvard.cs50.cat plugins/c9.ide.cs50.cat
 ADD ./files/harvard.cs50.debug plugins/c9.ide.cs50.debug
-ADD ./files/harvard.cs50.droplet plugins/c9.ide.cs50.droplet
 ADD ./files/harvard.cs50.gist plugins/c9.ide.cs50.gist
 ADD ./files/harvard.cs50.info plugins/c9.ide.cs50.info
 ADD ./files/harvard.cs50.presentation plugins/c9.ide.cs50.presentation

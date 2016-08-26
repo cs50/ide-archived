@@ -45,7 +45,6 @@ offline:
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.audioplayer.git ide50-offline/files/harvard.cs50.audioplayer
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.cat.git ide50-offline/files/harvard.cs50.cat
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.debug.git ide50-offline/files/harvard.cs50.debug
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.droplet.git ide50-offline/files/harvard.cs50.droplet
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.gist.git ide50-offline/files/harvard.cs50.gist
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.info.git ide50-offline/files/harvard.cs50.info
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.presentation.git ide50-offline/files/harvard.cs50.presentation
