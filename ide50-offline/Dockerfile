@@ -54,5 +54,6 @@ ENTRYPOINT ["node", "server.js", \
             "-w", "/home/ubuntu/workspace", \
             "--workspacetype=cs50", \
             "--auth", ":", \
+            "--collab", \
             "--listen", "0.0.0.0", \
             "--port", "5050"]
