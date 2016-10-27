@@ -16,9 +16,10 @@ endif
 image="ide50-offline-big"
 run:
 	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
-		   --name $(CON_OFF) -d -t \
-		    --security-opt seccomp=unconfined \
-		   -p 5050:5050 -p 8080:8080 $(image) 2>/dev/null \
+		--name $(CON_OFF) -d -t \
+		--security-opt seccomp=unconfined \
+		-p 5050:5050 -p 8080:8080 -p 8081:8081 -p 8082:8082 \
+		$(image) 2>/dev/null \
 	|| docker start $(CON_OFF)
 
 open:
@@ -48,7 +49,6 @@ offline:
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.gist.git ide50-offline/files/harvard.cs50.gist
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.info.git ide50-offline/files/harvard.cs50.info
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.presentation.git ide50-offline/files/harvard.cs50.presentation
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.previewer.git ide50-offline/files/harvard.cs50.previewer
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.simple.git ide50-offline/files/harvard.cs50.simple
 	git clone --depth=1 git@github.com:cs50/harvard.cs50.theme.git ide50-offline/files/harvard.cs50.theme
 	rm -rf ide50-offline/files/harvard.cs50.*/.{git,gitignore}

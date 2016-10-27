@@ -34,7 +34,6 @@ ADD ./files/harvard.cs50.debug plugins/c9.ide.cs50.debug
 ADD ./files/harvard.cs50.gist plugins/c9.ide.cs50.gist
 ADD ./files/harvard.cs50.info plugins/c9.ide.cs50.info
 ADD ./files/harvard.cs50.presentation plugins/c9.ide.cs50.presentation
-ADD ./files/harvard.cs50.previewer plugins/c9.ide.cs50.previewer
 ADD ./files/harvard.cs50.simple plugins/c9.ide.cs50.simple
 ADD ./files/harvard.cs50.theme plugins/c9.ide.cs50.theme
 RUN sudo chown -R ubuntu:ubuntu plugins
@@ -49,7 +48,7 @@ RUN scripts/install-sdk.sh
 RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
     sudo chown -R ubuntu:ubuntu /home/ubuntu/.c9/
 
-EXPOSE 5050 8080
+EXPOSE 5050 8080 8081 8082
 ENTRYPOINT ["node", "server.js", \
             "-w", "/home/ubuntu/workspace", \
             "--workspacetype=cs50", \
