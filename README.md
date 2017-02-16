@@ -114,7 +114,7 @@ There are a variety of commands in `make` to help re-build an image.
 
 ## Re-build SDK
 
-After making changes to CSS (e.g., in `/var/c9sdk/plugins/*`) or config files (e.g., `/var/c9sdk/configs/client-workspace-cs50.js`):
+After making changes to CSS (e.g., in `/var/c9sdk/plugins/*`) or config files (e.g., `/var/c9sdk/configs/ide/workspace-cs50.js`):
 
     cd /path/to/ide50-docker
     make shell

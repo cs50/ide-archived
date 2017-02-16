@@ -9,7 +9,7 @@ module.exports = function(options) {
 
     options.projectName = "ide50-offline";
 
-    var config = require("./client-default")(options);
+    var config = require("./default")(options);
 
     var includes = [
         {

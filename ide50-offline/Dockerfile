@@ -39,7 +39,7 @@ ADD ./files/harvard.cs50.theme plugins/c9.ide.cs50.theme
 RUN sudo chown -R ubuntu:ubuntu plugins
 
 # install CS50's configuration
-ADD ./files/client-workspace-cs50.js configs/
+ADD ./files/workspace-cs50.js configs/ide/
 
 # install C9
 RUN scripts/install-sdk.sh
