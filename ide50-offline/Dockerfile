@@ -28,14 +28,7 @@ RUN sudo rm -rf c9sdk && \
 
 # install CS50's plugins
 WORKDIR c9sdk
-ADD ./files/harvard.cs50.audioplayer plugins/c9.ide.cs50.audioplayer
-ADD ./files/harvard.cs50.cat plugins/c9.ide.cs50.cat
-ADD ./files/harvard.cs50.debug plugins/c9.ide.cs50.debug
-ADD ./files/harvard.cs50.gist plugins/c9.ide.cs50.gist
-ADD ./files/harvard.cs50.info plugins/c9.ide.cs50.info
-ADD ./files/harvard.cs50.presentation plugins/c9.ide.cs50.presentation
-ADD ./files/harvard.cs50.simple plugins/c9.ide.cs50.simple
-ADD ./files/harvard.cs50.theme plugins/c9.ide.cs50.theme
+COPY ./files/plugins plugins/
 RUN sudo chown -R ubuntu:ubuntu plugins
 
 # install CS50's configuration

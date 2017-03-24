@@ -29,6 +29,14 @@ module.exports = function(options) {
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.gist"
         },
         {
+            packagePath: "plugins/c9.ide.cs50.hex/hex",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.hex"
+        },
+        {
+            packagePath: "plugins/c9.ide.cs50.hex/openhex",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.hex"
+        },
+        {
             packagePath: "plugins/c9.ide.cs50.info/info",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.info"
         },
