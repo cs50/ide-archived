@@ -5,12 +5,23 @@ IMG_SQU=ide50-offline
 CON_OFF=cs50ide
 IP := 127.0.0.1
 
+PLUGINS := audioplayer cat debug gist hex info presentation simple theme
+
 # pick right tool for opening IDE in browser
 ifeq ($(shell uname), Linux)
     OPEN=xdg-open
 else
     OPEN=open
 endif
+
+define getplugin
+	@echo "\nFetching $(1)..."
+	@plugin_dir="ide50-offline/files/plugins/c9.ide.cs50.$(1)"; \
+	mkdir -p "$$plugin_dir"; \
+	git clone --depth=1 "git@github.com:cs50/harvard.cs50.$(1).git" "$$plugin_dir"; \
+	rm -rf "$$plugin_dir/README.md" "$$plugin_dir/.git"*
+
+endef
 
 # running (you can override with, eg, `make run image="cs50/ide50-offline"`
 image="ide50-offline-big"
@@ -42,16 +53,10 @@ ide:
 	docker build -t $(IMG_IDE) $(IMG_IDE)
 
 offline:
-	rm -rf ide50-offline/files/harvard.cs50.*
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.audioplayer.git ide50-offline/files/harvard.cs50.audioplayer
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.cat.git ide50-offline/files/harvard.cs50.cat
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.debug.git ide50-offline/files/harvard.cs50.debug
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.gist.git ide50-offline/files/harvard.cs50.gist
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.info.git ide50-offline/files/harvard.cs50.info
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.presentation.git ide50-offline/files/harvard.cs50.presentation
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.simple.git ide50-offline/files/harvard.cs50.simple
-	git clone --depth=1 git@github.com:cs50/harvard.cs50.theme.git ide50-offline/files/harvard.cs50.theme
-	rm -rf ide50-offline/files/harvard.cs50.*/.{git,gitignore}
+	rm -rf ide50-offline/files/plugins
+	mkdir ide50-offline/files/plugins
+	$(foreach plugin,$(PLUGINS),$(call getplugin,$(plugin)))
+	rm -rf ide50-offline/files/plugins/*/.{git,gitignore}
 	docker build -t $(IMG_OFF) ide50-offline
 
 build: wkspc ide offline
@@ -66,7 +71,7 @@ squash:
 
 # removal
 clean: stop
-	rm -rf ide50-offline/files/harvard.cs50.* || true
+	rm -rf ide50-offline/files/plugins || true
 	docker rm $(CON_OFF) || true
 	docker rmi $(IMG_SQU) || true
 	docker rmi $(IMG_OFF) || true
