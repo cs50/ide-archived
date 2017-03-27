@@ -1,7 +1,7 @@
 IMG_WKSPC=workspace
 IMG_IDE=ide50
 IMG_OFF=ide50-offline-big
-IMG_SQU=ide50-offline
+IMG_SQU=cs50/ide50-offline
 CON_OFF=cs50ide
 IP := 127.0.0.1
 
@@ -61,13 +61,13 @@ offline:
 
 build: wkspc ide offline
 
-# squash
 squash:
-	# be sure to build docker-squash with support for the new manifest:
-	# https://github.com/jwilder/docker-squash/pull/55
-	# This may help, if the PR isn't yet merged:
-	# https://stackoverflow.com/questions/27567846/how-can-i-checkout-a-github-pull-request
-	docker save $(IMG_OFF) | sudo docker-squash -t $(IMG_SQU):latest | docker load
+	# be sure to install docker squash per https://github.com/goldmann/docker-squash#installation
+	docker-squash -t $(IMG_SQU):latest $(IMG_OFF)
+
+push:
+	# be sure to log in per https://docs.docker.com/engine/reference/commandline/login/
+	docker push $(IMG_SQU)
 
 # removal
 clean: stop

@@ -1,0 +1,14 @@
+sudo: required
+
+services: docker
+
+script: make build
+
+before_deploy:
+  - pip install docker-squash
+  - make squash
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+deploy:
+  provider: script
+  script: make push
