@@ -1,0 +1,13 @@
+sudo: required
+services: docker
+script: make build
+before_deploy:
+- pip install docker-squash
+- make squash
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+deploy:
+  provider: script
+  script: make push
+notifications:
+  slack:
+    secure: hfxjfW6tsKQqCfBx4YDIqz8nUF1C7LO8n4hXUjYATrj8iaLuVhpt6XW6r+p+8tUlmTkqZRROCcJxwVL3sbGdwZBnl225fWFmTXm9/xbALB/1HO8d52FsDOn2hKGFB6lGZcTaZONwTEotLDzGhLji6ySBzg5I8qs6hZ8ExEo3EXWgB9NttmFq+zMkBjLWR5Mp7fPuhn3k4kbs65H5bt8DaFx3nTQXql/iwCN6jVuSQDaRaQjmsXRCMMASePhVimVFnqRkyiMCJAz3uEFKqWD4kHG4lWSS/3MNmqF31zp75Yl+pBiaXH/e5hG42KpjsSTKiqtwHxKKdeai6XSVWJ3Z+WVZpAPzOWzfk1PQ+OJpq7B1338aXNlwjkx0tn/YLhv2MtII1I0OkdBvfHUX2/t+zHfI0Ewexh955XjsUwe3HlK/yN+B3ztRx/HHxd7Bpr6j00ZL/FnuZ3g4ZNhM8t9OqYYOcMTAQB660WvHKYJS3lbqi/Z/pTzr7HLZby564UMhrTlg1C3q6VBFahOIX4kN0LfjGVGHP54usKtBA1A7qf5mAO0hf5Voa1E4XuULWveuv0qBjJ70pU7bT0B+P+lYF6n0IN8cRBGAcXKZIeZIHTIauYteYOl/4ttPhknfoonhBq5YufggfrtJ4oF0iF3PA9Ef4Pz6ajjY0nA8Rii+CSE=
