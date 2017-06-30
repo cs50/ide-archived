@@ -33,6 +33,10 @@ RUN apt-get update
 # editors
 RUN apt-get install -y vim emacs
 
+# git
+RUN add-apt-repository -y ppa:git-core/ppa && apt-get update && \
+    apt-get install -y git
+
 # servers
 RUN apt-get install -y mysql-server phpmyadmin
 RUN apt-get install -y apache2 php5 php5-mcrypt
