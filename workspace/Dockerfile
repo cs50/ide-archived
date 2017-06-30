@@ -8,7 +8,7 @@ RUN echo "Version 1.7"
 
 RUN apt-get update
 RUN apt-get -y dist-upgrade
-RUN apt-get install -y console-setup sudo wget curl git python software-properties-common man-db && \
+RUN apt-get install -y console-setup sudo wget curl python software-properties-common man-db && \
     echo "install console-setup" && \
     echo "console-setup   console-setup/codeset47 select  # Latin1 and Latin5 - western Europe and Turkic languages" | debconf-set-selections && \
     echo "console-setup   console-setup/fontface47        select  Fixed" | debconf-set-selections && \
@@ -32,6 +32,11 @@ RUN apt-get update
 
 # editors
 RUN apt-get install -y vim emacs
+
+# git
+RUN add-apt-repository -y ppa:git-core/ppa && \
+    apt-get update && \
+    apt-get install -y git
 
 # servers
 RUN apt-get install -y mysql-server phpmyadmin

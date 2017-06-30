@@ -2,7 +2,7 @@ IMG_WKSPC=workspace
 IMG_IDE=ide50
 IMG_OFF=ide50-offline-big
 IMG_SQU=ide50-offline
-CON_OFF=cs50ide
+CON_OFF=ide50
 IP := 127.0.0.1
 
 PLUGINS := audioplayer cat debug gist hex info presentation simple theme
