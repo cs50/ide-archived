@@ -1,7 +1,21 @@
-FROM ide50
+FROM cloud9/ws-php
 MAINTAINER Dan Armendariz <danallan@cs.harvard.edu>
 
-RUN curl -sL https://deb.nodesource.com/setup | bash - && \ 
+# increment version to force flushing the cache
+RUN echo "Version 2.0"
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN wget -O - http://mirror.cs50.net/ide50/2015/keyFile | sudo apt-key add -
+RUN add-apt-repository "deb http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/ /"
+RUN rm -rf /etc/php5/mods-available/xdebug.ini /home/ubuntu/workspace/*
+RUN curl -H 'Cache-Control: no-cache' -sL https://cs50.ly/update50 | bash
+
+RUN echo "Success" > /var/www/html/file
+
+RUN chown -R ubuntu:ubuntu /home/ubuntu && \
+    chown -R ubuntu:ubuntu /home/ubuntu
+RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get install nodejs -y
 
 # populate some env variables
