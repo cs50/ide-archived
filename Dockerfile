@@ -18,6 +18,30 @@ RUN chown -R ubuntu:ubuntu /home/ubuntu && \
 RUN curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get install nodejs -y
 
+# install and select node v7.6.0
+RUN export NVM_DIR=/home/ubuntu/.nvm && \
+    . $NVM_DIR/nvm.sh && \
+    nvm install 7.6.0 && \
+    nvm alias default 7.6.0
+
+# install Composer
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04
+RUN curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+# install hub
+# https://hub.github.com/
+# http://stackoverflow.com/a/27869453
+RUN mkdir /tmp/hub-linux-amd64 && \
+    curl -s -L https://github.com/github/hub/releases/latest | \
+        egrep -o '/github/hub/releases/download/.*/hub-linux-amd64-.*.tgz' | \
+        wget --base=http://github.com/ -i - -O - | \
+        tar xvz -C /tmp/hub-linux-amd64 --strip-components 1 && \
+    /tmp/hub-linux-amd64/install && \
+    rm -rf /tmp/hub-linux-amd64
+
+# install virtualenv for pylint
+RUN pip3 install virtualenv
+
 # populate some env variables
 RUN echo "export USER=ubuntu\n\
 export C9_PROJECT=ide50-offline\n\
