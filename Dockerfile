@@ -39,6 +39,9 @@ RUN mkdir /tmp/hub-linux-amd64 && \
     /tmp/hub-linux-amd64/install && \
     rm -rf /tmp/hub-linux-amd64
 
+# install virtualenv for pylint
+RUN pip3 install virtualenv
+
 # populate some env variables
 RUN echo "export USER=ubuntu\n\
 export C9_PROJECT=ide50-offline\n\
