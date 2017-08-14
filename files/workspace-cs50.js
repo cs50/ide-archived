@@ -49,6 +49,10 @@ module.exports = function(options) {
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.simple"
         },
         {
+            packagePath: "plugins/c9.ide.cs50.statuspage/statuspage",
+            staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.statuspage"
+        },
+        {
             packagePath: "plugins/c9.ide.cs50.theme/theme",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.theme"
         }

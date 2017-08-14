@@ -3,7 +3,7 @@ IMG_IDE=ide50-offline
 CON_OFF=ide50
 IP := 127.0.0.1
 
-PLUGINS := audioplayer cat debug gist hex info presentation simple theme
+PLUGINS := audioplayer cat debug gist hex info presentation simple statuspage theme
 
 # pick right tool for opening IDE in browser
 ifeq ($(shell uname), Linux)
