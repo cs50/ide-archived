@@ -9,14 +9,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN wget -O - http://mirror.cs50.net/ide50/2015/keyFile | sudo apt-key add -
 RUN add-apt-repository "deb http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/ /"
 RUN rm -rf /etc/php5/mods-available/xdebug.ini /home/ubuntu/workspace/*
-RUN curl -H 'Cache-Control: no-cache' -sL https://cs50.ly/update50 | bash
+RUN curl -H 'Cache-Control: no-cache' -sL https://cs50.ly/update50 | sudo -H -u ubuntu bash
 
 RUN echo "Success" > /var/www/html/file
 
 RUN chown -R ubuntu:ubuntu /home/ubuntu && \
     chown -R ubuntu:ubuntu /home/ubuntu
-RUN curl -sL https://deb.nodesource.com/setup | bash - && \
-    apt-get install nodejs -y
 
 # populate some env variables
 RUN echo "export USER=ubuntu\n\
@@ -49,7 +47,8 @@ RUN sudo chown -R ubuntu:ubuntu plugins
 ADD ./files/workspace-cs50.js configs/ide/
 
 # install C9
-RUN scripts/install-sdk.sh
+ENV NVM_DIR=/home/ubuntu/.nvm
+RUN . $NVM_DIR/nvm.sh && scripts/install-sdk.sh
 
 # set defaults
 RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
@@ -58,10 +57,11 @@ RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
 ADD files/check-environment /.check-environment/cs50
 
 EXPOSE 5050 8080 8081 8082
-ENTRYPOINT ["node", "server.js", \
-            "-w", "/home/ubuntu/workspace", \
-            "--workspacetype=cs50", \
-            "--auth", ":", \
-            "--collab", \
-            "--listen", "0.0.0.0", \
-            "--port", "5050"]
+ENTRYPOINT . $NVM_DIR/nvm.sh && \
+    node server.js \
+        -w /home/ubuntu/workspace \
+        --workspacetype=cs50 \
+        --auth : \
+        --collab \
+        --listen 0.0.0.0 \
+        --port 5050
