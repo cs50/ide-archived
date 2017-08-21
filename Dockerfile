@@ -55,6 +55,8 @@ RUN scripts/install-sdk.sh
 RUN sudo chown -R ubuntu:ubuntu /home/ubuntu/workspace/ && \
     sudo chown -R ubuntu:ubuntu /home/ubuntu/.c9/
 
+ADD files/check-environment /.check-environment/cs50
+
 EXPOSE 5050 8080 8081 8082
 ENTRYPOINT ["node", "server.js", \
             "-w", "/home/ubuntu/workspace", \

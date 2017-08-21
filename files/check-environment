@@ -1,0 +1,85 @@
+#!/bin/bash
+
+RED="\e[0;31m"
+GREEN="\e[0;32m"
+NO_COLOR="\e[0m"
+
+color_print() {
+    eval echo -en "\$$2"
+    echo -n "$1"
+    echo -e "$NO_COLOR"
+}
+
+scripts_on_path() {
+    while [ $# -gt 0 ]; do
+        test -x "$(which $1 2>&1 /dev/null)"
+        if [ $? -ne 0 ]; then
+            color_print "$1 is not on PATH" RED
+            exit $?
+        fi
+        shift
+    done 
+}
+
+version_matches() { 
+    eval "$1 2>&1 | grep -q \"$2\""
+    if [ $? -ne 0 ]; then
+        color_print "$1's version doesn't match" RED
+        exit $?
+    fi
+}
+
+py_pkg_version_matches() {
+    version_matches "pip show $1" "Version: $2"
+}
+
+# verify IDE was installed
+ide50_version="$(version50)"
+if [ -z "$ide50_version" ]; then
+    color_print "ide50 package is not properly installed" RED
+    exit 1
+fi
+
+# check installed version against latest in mirror
+MIRROR=http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/Packages
+latest_ide50_version=$(curl $MIRROR 2>/dev/null | sed -n "s/.*ide50_\([0-9]\+\)_.*/\1/p")
+
+if [ -z "$latest_ide50_version" ]; then
+    color_print "Could not fetch latest ide50 package version from $MIRROR" RED
+    exit 1
+fi
+
+if [ "$ide50_version" -ne "$latest_ide50_version" ]; then
+    color_print "ide50 installed version does not match repo version" RED
+    color_print "Did you increment 'Version' in ws-cs50/Dockerfile?" RED
+    exit 1
+fi
+
+# Java 7
+version_matches "java -version" "java version.*1.7"
+
+# Pyhton 3.6
+version_matches "python --version" 3.6
+
+# node 8.4.0
+version_matches "node --version" 8.4.0
+
+# Python packages
+py_pkg_version_matches check50 2.0.1
+py_pkg_version_matches cs50 2.2.0
+py_pkg_version_matches style50 2.1.2
+py_pkg_version_matches render50 2.0.1
+py_pkg_version_matches submit50 2.4.1
+
+# scripts on PATH
+scripts_on_path \
+    .info50 \
+    check50 \
+    debug50 \
+    hostname50 \
+    render50 \
+    style50 \
+    submit50 \
+    update50
+
+color_print PASSED GREEN
