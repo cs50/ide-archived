@@ -91,7 +91,9 @@ scripts_on_path \
     .info50 \
     check50 \
     debug50 \
+    flask \
     hostname50 \
+    phpliteadmin \
     render50 \
     style50 \
     submit50 \
