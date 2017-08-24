@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# parse command-line arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+
+        # whether to match ide50 version on mirror
+        --check-mirror)
+            check_mirror=1
+        ;;
+    esac
+
+    shift
+done
+
 RED="\e[0;31m"
 GREEN="\e[0;32m"
 NO_COLOR="\e[0m"
@@ -18,10 +31,10 @@ scripts_on_path() {
             exit $?
         fi
         shift
-    done 
+    done
 }
 
-version_matches() { 
+version_matches() {
     eval "$1 2>&1 | grep -q \"$2\""
     if [ $? -ne 0 ]; then
         color_print "$1's version doesn't match" RED
@@ -41,18 +54,20 @@ if [ -z "$ide50_version" ]; then
 fi
 
 # check installed version against latest in mirror
-MIRROR=http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/Packages
-latest_ide50_version=$(curl $MIRROR 2>/dev/null | sed -n "s/.*ide50_\([0-9]\+\)_.*/\1/p")
+if [ $check_mirror ]; then
+	MIRROR=http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/Packages
+	latest_ide50_version=$(curl $MIRROR 2>/dev/null | sed -n "s/.*ide50_\([0-9]\+\)_.*/\1/p")
 
-if [ -z "$latest_ide50_version" ]; then
-    color_print "Could not fetch latest ide50 package version from $MIRROR" RED
-    exit 1
-fi
+	if [ -z "$latest_ide50_version" ]; then
+		color_print "Could not fetch latest ide50 package version from $MIRROR" RED
+		exit 1
+	fi
 
-if [ "$ide50_version" -ne "$latest_ide50_version" ]; then
-    color_print "ide50 installed version does not match repo version" RED
-    color_print "Did you increment 'Version' in ws-cs50/Dockerfile?" RED
-    exit 1
+	if [ "$ide50_version" -ne "$latest_ide50_version" ]; then
+		color_print "ide50 installed version does not match repo version" RED
+		color_print "Did you increment 'Version' in ws-cs50/Dockerfile?" RED
+		exit 1
+	fi
 fi
 
 # Java 7
