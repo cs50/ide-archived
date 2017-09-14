@@ -9,7 +9,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN wget -O - http://mirror.cs50.net/ide50/2015/keyFile | sudo apt-key add -
 RUN add-apt-repository "deb http://mirror.cs50.net/ide50/2015/dists/trusty/main/binary-amd64/ /"
 RUN rm -rf /etc/php5/mods-available/xdebug.ini /home/ubuntu/workspace/*
-RUN curl -H 'Cache-Control: no-cache' -sL https://cs50.ly/update50 | bash
+
+ENV PATH="/usr/local/rvm/bin/:$PATH"
+RUN curl -H 'Cache-Control: no-cache' -sL https://cs50.ly/update50 | sudo -H -u ubuntu bash
 
 RUN echo "Success" > /var/www/html/file
 

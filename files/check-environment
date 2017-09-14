@@ -79,12 +79,15 @@ version_matches "python --version" 3.6
 # node 8.4.0
 version_matches "node --version" 8.4.0
 
+# ruby 2.4.0
+version_matches "ruby --version" 2.4.0
+
 # Python packages
 py_pkg_version_matches check50 2.0.4
 py_pkg_version_matches cs50 2.2.0
 py_pkg_version_matches style50 2.1.4
 py_pkg_version_matches render50 2.0.1
-py_pkg_version_matches submit50 2.4.2
+py_pkg_version_matches submit50 2.4.3
 
 # scripts on PATH
 scripts_on_path \
