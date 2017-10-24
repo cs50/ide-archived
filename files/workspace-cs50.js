@@ -17,7 +17,7 @@ module.exports = function(options) {
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.audioplayer"
         },
         {
-            packagePath: "plugins/c9.ide.cs50.audioplayer/browser",
+            packagePath: "plugins/c9.ide.cs50.browser/browser",
             staticPrefix: options.staticPrefix + "/plugins/c9.ide.cs50.browser"
         },
         {
