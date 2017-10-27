@@ -3,7 +3,7 @@ IMG_IDE=ide50-offline
 CON_OFF=ide50
 IP := 127.0.0.1
 
-PLUGINS := audioplayer cat debug gist hex info presentation simple statuspage theme
+PLUGINS := audioplayer browser cat debug gist hex info presentation simple statuspage theme
 
 # pick right tool for opening IDE in browser
 ifeq ($(shell uname), Linux)
@@ -46,7 +46,7 @@ build:
 	mkdir files/plugins
 	$(foreach plugin,$(PLUGINS),$(call getplugin,$(plugin)))
 	rm -rf files/plugins/*/.{git,gitignore}
-	docker build -t $(IMG_IDE) .
+	docker build --no-cache -t $(IMG_IDE) .
 
 # removal
 clean: stop
