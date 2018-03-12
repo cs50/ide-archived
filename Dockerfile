@@ -17,8 +17,6 @@ RUN echo "Success" > /var/www/html/file
 
 RUN chown -R ubuntu:ubuntu /home/ubuntu && \
     chown -R ubuntu:ubuntu /home/ubuntu
-RUN curl -sL https://deb.nodesource.com/setup | bash - && \
-    apt-get install nodejs -y
 
 # populate some env variables
 RUN echo "export USER=ubuntu\n\
