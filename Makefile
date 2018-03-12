@@ -1,5 +1,5 @@
 IMG_WKSPC=workspace
-IMG_IDE=ide50-offline
+IMG_IDE=cs50/ide
 CON_OFF=ide50
 IP := 127.0.0.1
 
@@ -22,7 +22,7 @@ define getplugin
 endef
 
 run:
-	docker run -e "OFFLINE_IP=$(IP)" -e "OFFLINE_PORT=8080" \
+	docker run -e "IP=$(IP)" -e "PORT=8080" \
 		--name $(CON_OFF) -d -t \
 		--security-opt seccomp=unconfined \
 		-p 5050:5050 -p 8080:8080 -p 8081:8081 -p 8082:8082 \
