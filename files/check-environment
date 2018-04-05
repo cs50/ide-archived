@@ -76,8 +76,8 @@ version_matches "java -version" "java version.*1.7"
 # Pyhton 3.6
 version_matches "python --version" 3.6
 
-# node 8.4.0
-version_matches "node --version" 8.4.0
+# node
+version_matches "node --version" 9.8.0
 
 # ruby 2.4.0
 version_matches "ruby --version" 2.4.0
