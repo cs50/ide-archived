@@ -1,5 +1,6 @@
-# ide50-docker
-IDE50's Docker configuration for Cloud9
+# ide
+
+CS50 IDE's Docker configuration for Cloud9
 
 Since Docker containers are built incrementally, building an offline container
 requires first creating an underlying <tt>workspace</tt> image, then building
