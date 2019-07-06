@@ -1,4 +1,4 @@
-# ide
+# `cs50/ide`
 
 CS50 IDE's Docker configuration for Cloud9
 
